@@ -1,4 +1,6 @@
-# image-template
+# Bazzite Wepeell
+
+This is a personal custom image of Bazzite (bazzite:stable).
 
 # Purpose
 
