@@ -15,13 +15,13 @@ on:
         options:
           - amd64
           - arm64
-  pull_request:
-    branches:
-      - main
-    paths:
-      - './iso.toml'
-      - './.github/workflows/build-iso.yml'
-      - './Justfile'
+#  pull_request:
+#    branches:
+#      - main
+#    paths:
+#      - './iso.toml'
+#      - './.github/workflows/build-iso.yml'
+#      - './Justfile'
 
 env:
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository }}"
