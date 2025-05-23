@@ -5,6 +5,7 @@ This is a personal custom image of Bazzite (bazzite:stable).
 ## Things added
 
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
+- [Starship](https://github.com/starship/starship)
 
 ## Install
 
