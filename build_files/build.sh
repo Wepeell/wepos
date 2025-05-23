@@ -31,3 +31,10 @@ set -ouex pipefail
 echo "Installing packages..."
 /ctx/install-packages.sh || { echo "install-packages.sh failed! Exiting."; exit 1; }
 echo "Packages installed!"
+
+
+
+# Install Starship Shell Prompt
+echo "Installing Starship Shell Prompt..."
+/ctx/install-starship.sh || { echo "install-starship.sh failed! Exiting."; exit 1; }
+echo "Starship Shell Prompt installed!"
