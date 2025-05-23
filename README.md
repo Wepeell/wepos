@@ -13,7 +13,7 @@ Download and install Bazzite first.
 Then run:
 
 ```bash
-sudo bootc switch ghcr.io/wepeell/bazzite-wepeell:latest
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/wepeell/bazzite-wepeell:latest
 ```
 
 # Purpose
