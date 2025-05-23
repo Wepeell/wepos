@@ -2,6 +2,16 @@
 
 This is a personal custom image of Bazzite (bazzite:stable).
 
+## Install
+
+Download and install Bazzite first.
+
+Then run:
+
+```bash
+sudo bootc switch ghcr.io/wepeell/bazzite-wepeell:latest
+```
+
 # Purpose
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project:
