@@ -22,3 +22,12 @@ set -ouex pipefail
 #### Example for enabling a System Unit File
 
 #systemctl enable podman.socket
+
+
+
+### Install scripts
+
+# Install packages
+echo "Installing packages..."
+/ctx/install-packages.sh || { echo "install-packages.sh failed! Exiting."; exit 1; }
+echo "Packages installed!"
