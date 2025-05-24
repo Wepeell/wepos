@@ -38,3 +38,8 @@ echo "Packages installed!"
 echo "Installing Starship Shell Prompt..."
 /ctx/install-starship.sh || { echo "install-starship.sh failed! Exiting."; exit 1; }
 echo "Starship Shell Prompt installed!"
+
+
+
+# Clean package manager cache
+dnf5 clean all
