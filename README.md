@@ -17,6 +17,14 @@ Then run:
 sudo bootc switch --enforce-container-sigpolicy ghcr.io/wepeell/bazzite-wepeell:latest
 ```
 
+## Uninstall
+
+To switch back to Bazzite:
+
+```bash
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/ublue-os/bazzite:stable
+```
+
 # Purpose
 
 This repository is meant to be a template for building your own custom [bootc](https://github.com/bootc-dev/bootc) image. This template is the recommended way to make customizations to any image published by the Universal Blue Project:
