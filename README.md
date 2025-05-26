@@ -1,6 +1,6 @@
 # Bazzite Wepeell
 
-This is a personal custom image of Bazzite (bazzite:stable).
+This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite) (bazzite:stable).
 
 ## Things added
 
