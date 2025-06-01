@@ -41,5 +41,12 @@ echo "Starship Shell Prompt installed!"
 
 
 
+# Remove base Bazzite packages
+echo "Removing base Bazzite packages..."
+/ctx/remove-packages.sh || { echo "remove-packages.sh failed! Exiting."; exit 1; }
+echo "Base Bazzite packages removed!"
+
+
+
 # Clean package manager cache
 dnf5 clean all
