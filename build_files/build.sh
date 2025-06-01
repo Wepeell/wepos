@@ -29,22 +29,34 @@ set -ouex pipefail
 
 # Install packages
 echo "Installing packages..."
-/ctx/install-packages.sh || { echo "install-packages.sh failed! Exiting."; exit 1; }
-echo "Packages installed!"
+if /ctx/install-packages.sh; then
+	echo "Packages installed!"
+else
+	echo "install-packages.sh failed! Exiting."
+	exit 1
+fi
 
 
 
 # Install Starship Shell Prompt
 echo "Installing Starship Shell Prompt..."
-/ctx/install-starship.sh || { echo "install-starship.sh failed! Exiting."; exit 1; }
-echo "Starship Shell Prompt installed!"
+if /ctx/install-starship.sh; then
+	echo "Starship Shell Prompt installed!"
+else
+	echo "install-starship.sh failed! Exiting."
+	exit 1
+fi
 
 
 
 # Remove base Bazzite packages
 echo "Removing base Bazzite packages..."
-/ctx/remove-packages.sh || { echo "remove-packages.sh failed! Exiting."; exit 1; }
-echo "Base Bazzite packages removed!"
+if /ctx/remove-packages.sh; then
+	echo "Base Bazzite packages removed!"
+else
+	echo "remove-packages.sh failed! Exiting."
+	exit 1
+fi
 
 
 
