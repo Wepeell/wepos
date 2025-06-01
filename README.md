@@ -7,6 +7,11 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
 - [Starship](https://github.com/starship/starship)
 
+## Things removed
+
+- Lutris
+- Steam
+
 ## Install
 
 Download and install Bazzite first.
