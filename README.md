@@ -10,7 +10,6 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Things removed
 
 - Lutris
-- Steam
 
 ## Install
 
