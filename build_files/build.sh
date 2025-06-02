@@ -50,13 +50,13 @@ fi
 
 
 # Remove base Bazzite packages
-echo "Removing base Bazzite packages..."
-if /ctx/remove-packages.sh; then
-	echo "Base Bazzite packages removed!"
-else
-	echo "remove-packages.sh failed! Exiting."
-	exit 1
-fi
+# echo "Removing base Bazzite packages..."
+# if /ctx/remove-packages.sh; then
+# 	echo "Base Bazzite packages removed!"
+# else
+# 	echo "remove-packages.sh failed! Exiting."
+# 	exit 1
+# fi
 
 
 
