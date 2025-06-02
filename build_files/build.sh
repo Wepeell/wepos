@@ -49,6 +49,17 @@ fi
 
 
 
+# Install Linux FCP (Focusrite Control Protocol) Support Tools
+echo "Installing Linux FCP (Focusrite Control Protocol) Support Tools..."
+if /ctx/install-fcp-support.sh; then
+	echo "Linux FCP Support Tools installed!"
+else
+	echo "install-fcp-support.sh failed! Exiting."
+	exit 1
+fi
+
+
+
 # Remove base Bazzite packages
 # echo "Removing base Bazzite packages..."
 # if /ctx/remove-packages.sh; then
