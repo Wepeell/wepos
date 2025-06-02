@@ -71,6 +71,17 @@ fi
 
 
 
+# Install ALSA Scarlett Control Panel (alsa-scarlett-gui)
+echo "Installing ALSA Scarlett Control Panel (alsa-scarlett-gui)..."
+if /ctx/install-alsa-scarlett-gui.sh; then
+	echo "ALSA Scarlett Control Panel installed!"
+else
+	echo "install-alsa-scarlett-gui.sh failed! Exiting."
+	exit 1
+fi
+
+
+
 # Remove base Bazzite packages
 # echo "Removing base Bazzite packages..."
 # if /ctx/remove-packages.sh; then
