@@ -60,6 +60,17 @@ fi
 
 
 
+# Install Scarlett4 Firmware
+echo "Installing Scarlett4 Firmware..."
+if /ctx/install-scarlett4-firmware.sh; then
+	echo "Scarlett4 Firmware installed!"
+else
+	echo "install-scarlett4-firmware.sh failed! Exiting."
+	exit 1
+fi
+
+
+
 # Remove base Bazzite packages
 # echo "Removing base Bazzite packages..."
 # if /ctx/remove-packages.sh; then
