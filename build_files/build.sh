@@ -39,13 +39,13 @@ fi
 
 
 # Install Starship Shell Prompt
-echo "Installing Starship Shell Prompt..."
-if /ctx/install-starship.sh; then
-	echo "Starship Shell Prompt installed!"
-else
-	echo "install-starship.sh failed! Exiting."
-	exit 1
-fi
+# echo "Installing Starship Shell Prompt..."
+# if /ctx/install-starship.sh; then
+# 	echo "Starship Shell Prompt installed!"
+# else
+# 	echo "install-starship.sh failed! Exiting."
+# 	exit 1
+# fi
 
 
 
