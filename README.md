@@ -5,6 +5,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Things added
 
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
+- [Linux FCP (Focusrite Control Protocol) Support Tools](https://github.com/geoffreybennett/fcp-support)
 
 ## Install
 
