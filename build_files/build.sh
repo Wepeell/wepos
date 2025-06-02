@@ -49,6 +49,39 @@ fi
 
 
 
+# Install Linux FCP (Focusrite Control Protocol) Support Tools
+echo "Installing Linux FCP (Focusrite Control Protocol) Support Tools..."
+if /ctx/install-fcp-support.sh; then
+	echo "Linux FCP Support Tools installed!"
+else
+	echo "install-fcp-support.sh failed! Exiting."
+	exit 1
+fi
+
+
+
+# Install Scarlett4 Firmware
+echo "Installing Scarlett4 Firmware..."
+if /ctx/install-scarlett4-firmware.sh; then
+	echo "Scarlett4 Firmware installed!"
+else
+	echo "install-scarlett4-firmware.sh failed! Exiting."
+	exit 1
+fi
+
+
+
+# Install ALSA Scarlett Control Panel (alsa-scarlett-gui)
+echo "Installing ALSA Scarlett Control Panel (alsa-scarlett-gui)..."
+if /ctx/install-alsa-scarlett-gui.sh; then
+	echo "ALSA Scarlett Control Panel installed!"
+else
+	echo "install-alsa-scarlett-gui.sh failed! Exiting."
+	exit 1
+fi
+
+
+
 # Remove base Bazzite packages
 # echo "Removing base Bazzite packages..."
 # if /ctx/remove-packages.sh; then
