@@ -2,9 +2,11 @@
 
 set -ouex pipefail
 
-# Remove base Bazzite packages
-dnf5 remove -y lutris \
-			   # steam
+# Remove Lutris
+dnf5 remove -y lutris
+
+# Remove Steam but keep dependencies
+dnf5 remove -y --noautoremove steam
 
 # Clean up .desktop shortcuts
-# rm -f /usr/share/applications/bazzite-steam-bpm.desktop
+rm -f /usr/share/applications/bazzite-steam-bpm.desktop
