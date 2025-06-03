@@ -5,9 +5,15 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Things added
 
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
-- [Linux FCP (Focusrite Control Protocol) Support Tools](https://github.com/geoffreybennett/fcp-support)
+- [Starship](https://github.com/starship/starship)
+- [Linux FCP Support Tools](https://github.com/geoffreybennett/fcp-support)
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
+
+## Things removed
+
+- Lutris
+- Steam
 
 ## Install
 
