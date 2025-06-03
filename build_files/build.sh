@@ -27,69 +27,39 @@ set -ouex pipefail
 
 ### Install scripts
 
-# Install packages
-echo "Installing packages..."
-if /ctx/install-packages.sh; then
-	echo "Packages installed!"
-else
-	echo "install-packages.sh failed! Exiting."
-	exit 1
-fi
+# Run script function
+function run_script() {
+	local message="$1"
+	local script_path="$2"
+	local script_name=$(basename "$script_path")
+	
+	echo "$message ..."
+	
+	if "$script_path"; then
+		echo "$script_name completed!"
+	else
+		echo "$script_name failed! Exiting."
+		exit 1
+	fi
+}
 
+# Install Fedora packages
+run_script "Installing Fedora packages" "/ctx/install-fedora-pkgs.sh"
 
+# Install COPR packages
+run_script "Installing COPR packages" "/ctx/install-copr-pkgs.sh"
 
-# Install Starship Shell Prompt
-# echo "Installing Starship Shell Prompt..."
-# if /ctx/install-starship.sh; then
-# 	echo "Starship Shell Prompt installed!"
-# else
-# 	echo "install-starship.sh failed! Exiting."
-# 	exit 1
-# fi
-
-
-
-# Install Linux FCP (Focusrite Control Protocol) Support Tools
-echo "Installing Linux FCP (Focusrite Control Protocol) Support Tools..."
-if /ctx/install-fcp-support.sh; then
-	echo "Linux FCP Support Tools installed!"
-else
-	echo "install-fcp-support.sh failed! Exiting."
-	exit 1
-fi
-
-
+# Install Linux FCP Support Tools
+run_script "Installing Linux FCP Support Tools" "/ctx/install-fcp-support.sh"
 
 # Install Scarlett4 Firmware
-echo "Installing Scarlett4 Firmware..."
-if /ctx/install-scarlett4-firmware.sh; then
-	echo "Scarlett4 Firmware installed!"
-else
-	echo "install-scarlett4-firmware.sh failed! Exiting."
-	exit 1
-fi
+run_script "Installing Scarlett4 Firmware" "/ctx/install-scarlett4-firmware.sh"
 
-
-
-# Install ALSA Scarlett Control Panel (alsa-scarlett-gui)
-echo "Installing ALSA Scarlett Control Panel (alsa-scarlett-gui)..."
-if /ctx/install-alsa-scarlett-gui.sh; then
-	echo "ALSA Scarlett Control Panel installed!"
-else
-	echo "install-alsa-scarlett-gui.sh failed! Exiting."
-	exit 1
-fi
-
-
+# Install ALSA Scarlett Control Panel
+run_script "Installing ALSA Scarlett Control Panel" "/ctx/install-alsa-scarlett-gui.sh"
 
 # Remove base Bazzite packages
-# echo "Removing base Bazzite packages..."
-# if /ctx/remove-packages.sh; then
-# 	echo "Base Bazzite packages removed!"
-# else
-# 	echo "remove-packages.sh failed! Exiting."
-# 	exit 1
-# fi
+run_script "Removing base Bazzite packages" "/ctx/remove-packages.sh"
 
 
 
