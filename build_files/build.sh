@@ -43,6 +43,10 @@ function run_script() {
 	fi
 }
 
+# Remove error when installing packages from repos:
+# gpg: Fatal: can't create directory '/root/.gnupg': No such file or directory
+mkdir -p /var/roothome
+
 # Install Fedora packages
 run_script "Installing Fedora packages" "/ctx/install-fedora-pkgs.sh"
 
