@@ -4,7 +4,7 @@ default:
 
 # Install Starship and Aurora config
 [group('Install')]
-wepeell-starship
+wepeell-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
