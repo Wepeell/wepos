@@ -29,16 +29,14 @@ set -ouex pipefail
 
 # Run script function
 function run_script() {
-	local message="$1"
-	local script_path="$2"
-	local script_name=$(basename "$script_path")
+	local script="$1"
 	
-	echo "$message ..."
+	echo "Running $script..."
 	
-	if "$script_path"; then
-		echo "$script_name completed!"
+	if "$script"; then
+		echo "$script completed!"
 	else
-		echo "$script_name failed! Exiting."
+		echo "$script failed! Exiting."
 		exit 1
 	fi
 }
@@ -48,25 +46,25 @@ function run_script() {
 mkdir -p /var/roothome
 
 # Install Fedora packages
-run_script "Installing Fedora packages" "/ctx/install-fedora-pkgs.sh"
+run_script "/ctx/install-fedora-pkgs.sh"
 
 # Install COPR packages
-run_script "Installing COPR packages" "/ctx/install-copr-pkgs.sh"
+run_script "/ctx/install-copr-pkgs.sh"
 
 # Install Terra packages
-run_script "Installing Terra packages" "/ctx/install-terra-pkgs.sh"
+run_script "/ctx/install-terra-pkgs.sh"
 
 # Install Linux FCP Support Tools
-run_script "Installing Linux FCP Support Tools" "/ctx/install-fcp-support.sh"
+run_script "/ctx/install-fcp-support.sh"
 
 # Install Scarlett4 Firmware
-run_script "Installing Scarlett4 Firmware" "/ctx/install-scarlett4-firmware.sh"
+run_script "/ctx/install-scarlett4-firmware.sh"
 
 # Install ALSA Scarlett Control Panel
-run_script "Installing ALSA Scarlett Control Panel" "/ctx/install-alsa-scarlett-gui.sh"
+run_script "/ctx/install-alsa-scarlett-gui.sh"
 
 # Remove base Bazzite packages
-run_script "Removing base Bazzite packages" "/ctx/remove-packages.sh"
+run_script "/ctx/remove-bazzite-pkgs.sh"
 
 
 
