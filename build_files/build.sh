@@ -66,6 +66,9 @@ run_script "/ctx/install-alsa-scarlett-gui.sh"
 # Remove base Bazzite packages
 # run_script "/ctx/remove-bazzite-pkgs.sh"
 
+# Add custom ujust commands
+run_script "/ctx/add-ujust-cmds.sh"
+
 
 
 # Clean package manager cache
