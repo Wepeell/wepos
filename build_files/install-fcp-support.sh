@@ -50,6 +50,4 @@ rm -rf /tmp/fcp-support
 # Uninstall packages for building
 dnf5 remove -y alsa-lib-devel \
 			   systemd-devel \
-			   zlib-devel \
-			   json-c-devel \
-			   pkgconfig
+			   json-c-devel
