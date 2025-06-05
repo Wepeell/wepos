@@ -3,6 +3,7 @@
 set -ouex pipefail
 
 # Copy just files to base image
+mkdir -p /usr/share/bazzite-wepeell/just
 cp /ctx/system_files/usr/share/bazzite-wepeell/just/*.just /usr/share/bazzite-wepeell/just
 
 # Enable custom ujust commands
