@@ -64,7 +64,7 @@ run_script "/ctx/install-scarlett4-firmware.sh"
 run_script "/ctx/install-alsa-scarlett-gui.sh"
 
 # Remove base Bazzite packages
-run_script "/ctx/remove-bazzite-pkgs.sh"
+# run_script "/ctx/remove-bazzite-pkgs.sh"
 
 
 
