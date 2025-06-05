@@ -49,10 +49,10 @@ mkdir -p /var/roothome
 run_script "/ctx/install-fedora-pkgs.sh"
 
 # Install COPR packages
-run_script "/ctx/install-copr-pkgs.sh"
+# run_script "/ctx/install-copr-pkgs.sh"
 
 # Install Terra packages
-run_script "/ctx/install-terra-pkgs.sh"
+# run_script "/ctx/install-terra-pkgs.sh"
 
 # Install Linux FCP Support Tools
 run_script "/ctx/install-fcp-support.sh"
@@ -64,7 +64,10 @@ run_script "/ctx/install-scarlett4-firmware.sh"
 run_script "/ctx/install-alsa-scarlett-gui.sh"
 
 # Remove base Bazzite packages
-run_script "/ctx/remove-bazzite-pkgs.sh"
+# run_script "/ctx/remove-bazzite-pkgs.sh"
+
+# Add custom ujust commands
+run_script "/ctx/add-ujust-cmds.sh"
 
 
 
