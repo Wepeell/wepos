@@ -12,9 +12,6 @@ dnf5 install -y make \
 				json-c-devel \
 				pkgconfig
 
-# Audio group membership is required to use fcp-tool
-# sudo usermod -a -G audio $USER
-
 # Clone repo
 git clone https://github.com/geoffreybennett/fcp-support.git /tmp/fcp-support
 
@@ -40,10 +37,6 @@ chmod 644 /usr/lib/systemd/system/fcp-server@.service
 chmod 644 /usr/lib/udev/rules.d/99-fcp.rules
 chmod 644 /usr/share/fcp-server/fcp-alsa-map-*.json
 
-# Reload systemd and udev
-# systemctl daemon-reload
-# udevadm control --reload-rules
-
 # Cleanup repo
 rm -rf /tmp/fcp-support
 
@@ -51,3 +44,10 @@ rm -rf /tmp/fcp-support
 dnf5 remove -y alsa-lib-devel \
 			   systemd-devel \
 			   json-c-devel
+
+# Audio group membership is required to use fcp-tool
+# sudo usermod -a -G audio $USER
+
+# Reload systemd and udev
+# systemctl daemon-reload
+# udevadm control --reload-rules
