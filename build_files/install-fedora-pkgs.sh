@@ -3,5 +3,6 @@
 set -ouex pipefail
 
 # Install Fedora packages
-dnf5 install -y plasma-wallpapers-dynamic \
-				plasma-wallpapers-dynamic-builder
+dnf5 -y install \
+	plasma-wallpapers-dynamic \
+	plasma-wallpapers-dynamic-builder

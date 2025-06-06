@@ -3,14 +3,15 @@
 set -ouex pipefail
 
 # Install required packages for building
-dnf5 install -y make \
-				gcc \
-				alsa-lib-devel \
-				systemd-devel \
-				openssl-devel \
-				zlib-devel \
-				json-c-devel \
-				pkgconfig
+dnf5 -y install \
+	make \
+	gcc \
+	alsa-lib-devel \
+	systemd-devel \
+	openssl-devel \
+	zlib-devel \
+	json-c-devel \
+	pkgconfig
 
 # Clone repo
 git clone https://github.com/geoffreybennett/fcp-support.git /tmp/fcp-support
@@ -41,9 +42,10 @@ chmod 644 /usr/share/fcp-server/fcp-alsa-map-*.json
 rm -rf /tmp/fcp-support
 
 # Uninstall packages for building
-dnf5 remove -y alsa-lib-devel \
-			   systemd-devel \
-			   json-c-devel
+dnf5 -y remove \
+	alsa-lib-devel \
+	systemd-devel \
+	json-c-devel
 
 # Audio group membership is required to use fcp-tool
 # sudo usermod -a -G audio $USER
