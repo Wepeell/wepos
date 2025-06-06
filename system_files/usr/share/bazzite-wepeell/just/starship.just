@@ -17,7 +17,8 @@ wepeell-starship:
 	home_bashrc="$HOME/.bashrc"
 	comment="# Enable Starship Shell Prompt"
 	init_script='eval "$(starship init bash)"'
-
+	
+	# Check for existing configuration
 	if ! grep -qxF "$comment" "$home_bashrc" && ! grep -qxF "$init_script" "$home_bashrc"; then
 		echo >> "$home_bashrc"
 		echo "$comment" >> "$home_bashrc"
@@ -28,20 +29,22 @@ wepeell-starship:
 	fi
 	
 	# Install starship.toml config from Aurora
-	echo "Downloading starship.toml config from Aurora..."
-	home_config="$HOME/.config"
+	echo "Installing starship.toml config from Aurora..."
+	source_dir="/usr/share/bazzite-wepeell/starship"
+	target_dir="$HOME/.config"
 	filename="starship.toml"
-	destination_file="${home_config}/${filename}"
-	remote_file="https://raw.githubusercontent.com/ublue-os/aurora/refs/heads/main/system_files/shared/etc/skel/.config/starship.toml"
+	source_file="${source_dir}/${filename}"
+	target_file="${target_dir}/${filename}"
 	
-	# Check if destination file already exists
-	if [ -f "$destination_file" ]; then
-		echo "$destination_file already exists."
+	
+	# Check if target file already exists
+	if [ -f "$target_file" ]; then
+		echo "$target_file already exists."
 	else
-		# Download Starship config from Aurora
-		if wget -nc -P "$home_config" "$remote_file"; then
-			echo "Download succesful!"
+		# Copy source file to target
+		if cp "$source_file" "$target_file"; then
+			echo "Config install succesful!"
 		else
-			echo "Download failed!"
+			echo "Config install failed!"
 		fi
 	fi
