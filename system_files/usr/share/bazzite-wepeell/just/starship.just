@@ -14,22 +14,24 @@ wepeell-starship:
 	
 	# Configure .bashrc to enable Starship
 	echo "Configuring .bashrc to enable Starship..."
-	user_bashrc="$HOME/.bashrc"
+	home_bashrc="$HOME/.bashrc"
+	comment="# Enable Starship Shell Prompt"
+	init_script='eval "$(starship init bash)"'
 
-	if ! grep -qxF '# Enable Starship Shell Prompt' "$user_bashrc" && ! grep -qxF 'eval "$(starship init bash)"' "$user_bashrc"; then
-		echo >> "$user_bashrc"
-		echo '# Enable Starship Shell Prompt' >> "$user_bashrc"
-		echo 'eval "$(starship init bash)"' >> "$user_bashrc"
+	if ! grep -qxF "$comment" "$home_bashrc" && ! grep -qxF "$init_script" "$home_bashrc"; then
+		echo >> "$home_bashrc"
+		echo "$comment" >> "$home_bashrc"
+		echo "$init_script" >> "$home_bashrc"
 	else
-		echo "Detected existing Starship init script in $user_bashrc."
-		echo "Check $user_bashrc manually."
+		echo "Detected existing Starship init script in $home_bashrc."
+		echo "Check $home_bashrc manually."
 	fi
 	
 	# Install starship.toml config from Aurora
 	echo "Downloading starship.toml config from Aurora..."
-	user_config="$HOME/.config"
-	local_file="starship.toml"
-	destination_file="${user_config}/${local_file}"
+	home_config="$HOME/.config"
+	filename="starship.toml"
+	destination_file="${home_config}/${filename}"
 	remote_file="https://raw.githubusercontent.com/ublue-os/aurora/refs/heads/main/system_files/shared/etc/skel/.config/starship.toml"
 	
 	# Check if destination file already exists
@@ -37,7 +39,7 @@ wepeell-starship:
 		echo "$destination_file already exists."
 	else
 		# Download Starship config from Aurora
-		if wget -nc -P "$user_config" "$remote_file"; then
+		if wget -nc -P "$home_config" "$remote_file"; then
 			echo "Download succesful!"
 		else
 			echo "Download failed!"
