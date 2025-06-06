@@ -10,6 +10,7 @@ wepeell-nerd-fonts:
 	
 	# Install Nerd Fonts with Homebrew
 	echo "Installing Nerd Fonts with Homebrew..."
-	brew install --cask font-fira-code-nerd-font \
-						# font-noto-nerd-font \
-						# font-symbols-only-nerd-font
+	brew install --cask \
+		font-fira-code-nerd-font \
+		# font-noto-nerd-font \
+		# font-symbols-only-nerd-font
