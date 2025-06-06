@@ -2,6 +2,9 @@
 
 set -ouex pipefail
 
+# Repo directory
+REPO_DIR="/tmp/fcp-support"
+
 # Install required packages for building
 dnf5 -y install \
 	make \
@@ -14,10 +17,10 @@ dnf5 -y install \
 	pkgconfig
 
 # Clone repo
-git clone https://github.com/geoffreybennett/fcp-support.git /tmp/fcp-support
+git clone https://github.com/geoffreybennett/fcp-support.git "$REPO_DIR"
 
 # Build
-make -C /tmp/fcp-support
+make -C "$REPO_DIR"
 
 # Install
 mkdir -p /usr/bin
@@ -39,7 +42,7 @@ chmod 644 /usr/lib/udev/rules.d/99-fcp.rules
 chmod 644 /usr/share/fcp-server/fcp-alsa-map-*.json
 
 # Cleanup repo
-rm -rf /tmp/fcp-support
+rm -rf "$REPO_DIR"
 
 # Uninstall packages for building
 dnf5 -y remove \
