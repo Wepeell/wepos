@@ -8,8 +8,7 @@ dnf5 -y config-manager setopt "terra".enabled=true
 
 # Install Terra packages
 dnf5 -y install \
-	firacode-nerd-fonts \
-	noto-nerd-fonts
+	firacode-nerd-fonts
 
 # Disable Terra repo
 dnf5 -y config-manager setopt "terra*".enabled=false
