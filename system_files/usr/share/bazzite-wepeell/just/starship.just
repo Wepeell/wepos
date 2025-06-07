@@ -8,38 +8,77 @@ wepeell-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
+	# Variables
+	filename="starship.toml"
+	source_dir="/usr/share/bazzite-wepeell/starship"
+	target_dir="$HOME/.config"
+	source_file="${source_dir}/${filename}"
+	target_file="${target_dir}/${filename}"
+	
+	home_bashrc="$HOME/.bashrc"
+	comment="# Enable Starship Shell Prompt"
+	init_script='eval "$(starship init bash)"'
+	
 	# Install Starship with Homebrew
 	echo "Installing Starship with Homebrew..."
 	brew install starship
 	
-	# Configure .bashrc to enable Starship
-	echo "Configuring .bashrc to enable Starship..."
-	user_bashrc="$HOME/.bashrc"
-
-	if ! grep -qxF '# Enable Starship Shell Prompt' "$user_bashrc" && ! grep -qxF 'eval "$(starship init bash)"' "$user_bashrc"; then
-		echo >> "$user_bashrc"
-		echo '# Enable Starship Shell Prompt' >> "$user_bashrc"
-		echo 'eval "$(starship init bash)"' >> "$user_bashrc"
+	# Copy Aurora starship.toml config
+	echo "Copying Aurora starship.toml config..."
+	# Check if target file already exists
+	if [ -f "$target_file" ]; then
+		echo "$target_file already exists."
 	else
-		echo "Detected existing Starship init script in $user_bashrc."
-		echo "Check $user_bashrc manually."
-	fi
-	
-	# Install starship.toml config from Aurora
-	echo "Downloading starship.toml config from Aurora..."
-	user_config="$HOME/.config"
-	local_file="starship.toml"
-	destination_file="${user_config}/${local_file}"
-	remote_file="https://raw.githubusercontent.com/ublue-os/aurora/refs/heads/main/system_files/shared/etc/skel/.config/starship.toml"
-	
-	# Check if destination file already exists
-	if [ -f "$destination_file" ]; then
-		echo "$destination_file already exists."
-	else
-		# Download Starship config from Aurora
-		if wget -nc -P "$user_config" "$remote_file"; then
-			echo "Download succesful!"
+		# Copy source file to target
+		if cp "$source_file" "$target_file"; then
+			echo "Config copy succesful!"
 		else
-			echo "Download failed!"
+			echo "Config copy failed!"
 		fi
 	fi
+	
+	# Configure .bashrc to enable Starship
+	echo "Configuring .bashrc to enable Starship..."
+	# Check for existing configuration
+	if ! grep -qxF "$comment" "$home_bashrc" && ! grep -qxF "$init_script" "$home_bashrc"; then
+		if {
+			echo >> "$home_bashrc" &&
+			echo "$comment" >> "$home_bashrc" &&
+			echo "$init_script" >> "$home_bashrc"
+		}; then 
+			echo "Starship init script added successfully!"
+		else
+			echo "Failed to add Starship init script to $home_bashrc!"
+			echo "Check $home_bashrc manually."
+		fi
+	else
+		echo "Detected existing Starship init script in $home_bashrc."
+		echo "Check $home_bashrc manually."
+	fi
+
+# Uninstall Starship
+[group('Uninstall')]
+wepeell-uninstall-starship:
+	#!/usr/bin/env bash
+	set -euo pipefail
+	
+	# Variables
+	filename="starship.toml"
+	target_dir="$HOME/.config"
+	target_file="${target_dir}/${filename}"
+	
+	home_bashrc="$HOME/.bashrc"
+	comment="# Enable Starship Shell Prompt"
+	init_script='eval "$(starship init bash)"'
+	
+	# Uninstall Starship from Homebrew
+	echo "Uninstalling Starship..."
+	brew uninstall starship || true
+	
+	# Remove starship.toml config
+	echo "Removing starship.toml config..."
+	rm -f "$target_file" || true
+	
+	# Undo configurations to .bashrc
+	echo "Undoing configurations to .bashrc..."
+	sed -i "/^$/ {N; N; /^\n$comment\n$init_script$/d}" "$home_bashrc"
