@@ -1,10 +1,6 @@
-[private]
-default:
-	@just --list
-
 # Install Starship and Aurora config
 [group('Install')]
-wepeell-starship:
+install-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
@@ -58,7 +54,7 @@ wepeell-starship:
 
 # Uninstall Starship
 [group('Uninstall')]
-wepeell-uninstall-starship:
+uninstall-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
@@ -78,7 +74,11 @@ wepeell-uninstall-starship:
 	# Remove starship.toml config
 	echo "Removing starship.toml config..."
 	rm -f "$target_file" || true
-	
+
 	# Undo configurations to .bashrc
 	echo "Undoing configurations to .bashrc..."
 	sed -i "/^$/ {N; N; /^\n$comment\n$init_script$/d}" "$home_bashrc"
+
+	# Restart bash shell
+	echo "Restarting bash shell..."
+	exec bash
