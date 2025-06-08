@@ -5,18 +5,22 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Things added
 
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
-- [Starship](https://github.com/starship/starship)
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts)
-  - FiraCode Nerd Font
-  - Noto Nerd Font
 - [Linux FCP Support Tools](https://github.com/geoffreybennett/fcp-support)
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
 
-## Things removed
+## Custom ujust commands
 
-- Lutris
-- Steam
+```bash
+# Install Nerd Fonts with Homebrew
+ujust wepeell-nerd-fonts
+
+# Install Starship with Homebrew and enable it with Aurora's config
+ujust wepeell-starship
+
+# Uninstall Starship and its config
+ujust wepeell-uninstall-starship
+```
 
 ## Install
 
