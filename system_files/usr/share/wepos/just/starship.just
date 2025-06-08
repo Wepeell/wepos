@@ -74,11 +74,11 @@ uninstall-starship:
 	# Remove starship.toml config
 	echo "Removing starship.toml config..."
 	rm -f "$target_file" || true
-
+	
 	# Undo configurations to .bashrc
 	echo "Undoing configurations to .bashrc..."
 	sed -i "/^$/ {N; N; /^\n$comment\n$init_script$/d}" "$home_bashrc"
-
+	
 	# Restart bash shell
 	echo "Restarting bash shell..."
 	exec bash

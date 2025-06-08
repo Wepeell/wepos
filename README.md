@@ -9,17 +9,17 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
 
-## Custom ujust commands
+## Custom wjust commands
 
 ```bash
 # Install Nerd Fonts with Homebrew
-ujust wepeell-nerd-fonts
+wjust install-nerd-fonts
 
 # Install Starship with Homebrew and enable it with Aurora's config
-ujust wepeell-starship
+wjust install-starship
 
 # Uninstall Starship and its config
-ujust wepeell-uninstall-starship
+wjust uninstall-starship
 ```
 
 ## Install
