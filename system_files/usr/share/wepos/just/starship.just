@@ -10,7 +10,7 @@ wepeell-starship:
 	
 	# Variables
 	filename="starship.toml"
-	source_dir="/usr/share/bazzite-wepeell/starship"
+	source_dir="/usr/share/wepos/starship"
 	target_dir="$HOME/.config"
 	source_file="${source_dir}/${filename}"
 	target_file="${target_dir}/${filename}"

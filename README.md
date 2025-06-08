@@ -1,4 +1,4 @@
-# Bazzite Wepeell
+# WepOS - Wepeell OS
 
 This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite) (`bazzite:stable`).
 
@@ -25,7 +25,7 @@ Download and install Bazzite first.
 Then run:
 
 ```bash
-sudo bootc switch --enforce-container-sigpolicy ghcr.io/wepeell/bazzite-wepeell:latest
+sudo bootc switch --enforce-container-sigpolicy ghcr.io/wepeell/wepos:latest
 ```
 
 ## Uninstall
