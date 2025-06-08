@@ -48,9 +48,6 @@ cp -r /ctx/system_files/* /
 # gpg: Fatal: can't create directory '/root/.gnupg': No such file or directory
 mkdir -p /var/roothome
 
-# Add custom ujust commands
-run_script "/ctx/add-ujust-cmds.sh"
-
 # Install Fedora packages
 run_script "/ctx/install-fedora-pkgs.sh"
 
