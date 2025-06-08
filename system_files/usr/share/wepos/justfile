@@ -1,0 +1,9 @@
+set allow-duplicate-recipes := true
+set ignore-comments := true
+
+_default:
+	@just --list
+
+# Imports
+import "/usr/share/wepos/just/nerd-fonts.just"
+import "/usr/share/wepos/just/starship.just"
