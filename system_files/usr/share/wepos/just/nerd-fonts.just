@@ -1,10 +1,6 @@
-[private]
-default:
-	@just --list
-
 # Install Nerd Fonts
 [group('Install')]
-wepeell-nerd-fonts:
+install-nerd-fonts:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
