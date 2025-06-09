@@ -1,19 +1,25 @@
+# just variables
+filename := "starship.toml"
+source_dir := "/usr/share/wepos/starship"
+target_dir := "$HOME/.config"
+source_file := source_dir + "/" + filename
+target_file := target_dir + "/" + filename
+home_bashrc := "$HOME/.bashrc"
+comment := "# Enable Starship Shell Prompt"
+init_script := 'eval "$(starship init bash)"'
+
 # Install Starship and Aurora config
 [group('Install')]
 install-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
-	# Variables
-	filename="starship.toml"
-	source_dir="/usr/share/wepos/starship"
-	target_dir="$HOME/.config"
-	source_file="${source_dir}/${filename}"
-	target_file="${target_dir}/${filename}"
-	
-	home_bashrc="$HOME/.bashrc"
-	comment="# Enable Starship Shell Prompt"
-	init_script='eval "$(starship init bash)"'
+	# Shell variables
+	source_file="{{source_file}}"
+	target_file="{{target_file}}"
+	home_bashrc="{{home_bashrc}}"
+	comment="{{comment}}"
+	init_script='{{init_script}}'
 	
 	# Install Starship with Homebrew
 	echo "Installing Starship with Homebrew..."
@@ -58,14 +64,11 @@ uninstall-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
-	# Variables
-	filename="starship.toml"
-	target_dir="$HOME/.config"
-	target_file="${target_dir}/${filename}"
-	
-	home_bashrc="$HOME/.bashrc"
-	comment="# Enable Starship Shell Prompt"
-	init_script='eval "$(starship init bash)"'
+	# Shell variables
+	target_file="{{target_file}}"
+	home_bashrc="{{home_bashrc}}"
+	comment="{{comment}}"
+	init_script='{{init_script}}'
 	
 	# Uninstall Starship from Homebrew
 	echo "Uninstalling Starship..."
@@ -79,6 +82,5 @@ uninstall-starship:
 	echo "Undoing configurations to .bashrc..."
 	sed -i "/^$/ {N; N; /^\n$comment\n$init_script$/d}" "$home_bashrc"
 	
-	# Restart bash shell
-	echo "Restarting bash shell..."
-	exec bash
+	echo "Starship removed!"
+	echo "Please, restart the terminal."
