@@ -12,6 +12,9 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Custom wjust commands
 
 ```bash
+# Install custom keyboard layouts
+wjust install-keyboard-layouts
+
 # Install Nerd Fonts with Homebrew
 wjust install-nerd-fonts
 
