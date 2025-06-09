@@ -1,0 +1,71 @@
+// SE-US by Wepeel
+partial alphanumeric_keys
+xkb_symbols "se-us" {
+	
+	name[Group1]="Swedish (SE-US)";
+	
+	// Converts Right Alt to AltGr
+	include "level3(ralt_switch)"
+	
+	// `123 row
+	key <TLDE> { [ U0060, U007e, U00a7, U00bd ] }; // GRAVE ACCENT, TILDE, <none>, SECTION SIGN, VULGAR FRACTION ONE HALF
+	key <AE01> { [ 1, U0021, NoSymbol, NoSymbol ] }; // DIGIT ONE, EXCLAMATION MARK, <none>, <none>, <none>
+	key <AE02> { [ 2, U0040, NoSymbol, NoSymbol ] }; // DIGIT TWO, COMMERCIAL AT, <none>, <none>, <none>
+	key <AE03> { [ 3, U0023, U00a3, NoSymbol ] }; // DIGIT THREE, NUMBER SIGN, <none>, POUND SIGN, <none>
+	key <AE04> { [ 4, U0024, U00a4, NoSymbol ] }; // DIGIT FOUR, DOLLAR SIGN, <none>, CURRENCY SIGN, <none>
+	key <AE05> { [ 5, U0025, U20ac, NoSymbol ] }; // DIGIT FIVE, PERCENT SIGN, <none>, EURO SIGN, <none>
+	key <AE06> { [ 6, U005e, NoSymbol, NoSymbol ] }; // DIGIT SIX, CIRCUMFLEX ACCENT, <none>, <none>, <none>
+	key <AE07> { [ 7, U0026, NoSymbol, NoSymbol ] }; // DIGIT SEVEN, AMPERSAND, <none>, <none>, <none>
+	key <AE08> { [ 8, U002a, NoSymbol, NoSymbol ] }; // DIGIT EIGHT, ASTERISK, <none>, <none>, <none>
+	key <AE09> { [ 9, U0028, NoSymbol, NoSymbol ] }; // DIGIT NINE, LEFT PARENTHESIS, <none>, <none>, <none>
+	key <AE10> { [ 0, U0029, NoSymbol, NoSymbol ] }; // DIGIT ZERO, RIGHT PARENTHESIS, <none>, <none>, <none>
+	key <AE11> { [ U002d, U005f, NoSymbol, NoSymbol ] }; // HYPHEN-MINUS, LOW LINE, <none>, <none>, <none>
+	key <AE12> { [ U003d, U002b, dead_acute, dead_grave ] }; // EQUALS SIGN, PLUS SIGN, <none>, ACUTE ACCENT, GRAVE ACCENT
+	
+	// QWERTY row
+	key <AD01> { [ q, Q, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER Q, LATIN CAPITAL LETTER Q, <none>, <none>, <none>
+	key <AD02> { [ w, W, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER W, LATIN CAPITAL LETTER W, <none>, <none>, <none>
+	key <AD03> { [ e, E, U20ac, NoSymbol ] }; // LATIN SMALL LETTER E, LATIN CAPITAL LETTER E, <none>, EURO SIGN, <none>
+	key <AD04> { [ r, R, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER R, LATIN CAPITAL LETTER R, <none>, <none>, <none>
+	key <AD05> { [ t, T, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER T, LATIN CAPITAL LETTER T, <none>, <none>, <none>
+	key <AD06> { [ y, Y, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER Y, LATIN CAPITAL LETTER Y, <none>, <none>, <none>
+	key <AD07> { [ u, U, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER U, LATIN CAPITAL LETTER U, <none>, <none>, <none>
+	key <AD08> { [ i, I, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER I, LATIN CAPITAL LETTER I, <none>, <none>, <none>
+	key <AD09> { [ o, O, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER O, LATIN CAPITAL LETTER O, <none>, <none>, <none>
+	key <AD10> { [ p, P, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER P, LATIN CAPITAL LETTER P, <none>, <none>, <none>
+	key <AD11> { [ U00e5, U00c5, U005b, U007b ] }; // LATIN SMALL LETTER A WITH RING ABOVE, LATIN CAPITAL LETTER A WITH RING ABOVE, <none>, LEFT SQUARE BRACKET, LEFT CURLY BRACKET
+	key <AD12> { [ dead_diaeresis, dead_circumflex, U005d, U007d ] }; // DIAERESIS, CIRCUMFLEX ACCENT, <none>, RIGHT SQUARE BRACKET, RIGHT CURLY BRACKET
+	key <BKSL> { [ U005c, U007c, dead_tilde, NoSymbol ] }; // REVERSE SOLIDUS, VERTICAL LINE, <none>, TILDE, <none>
+	
+	// ASDF row
+	key <AC01> { [ a, A, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER A, LATIN CAPITAL LETTER A, <none>, <none>, <none>
+	key <AC02> { [ s, S, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER S, LATIN CAPITAL LETTER S, <none>, <none>, <none>
+	key <AC03> { [ d, D, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER D, LATIN CAPITAL LETTER D, <none>, <none>, <none>
+	key <AC04> { [ f, F, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER F, LATIN CAPITAL LETTER F, <none>, <none>, <none>
+	key <AC05> { [ g, G, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER G, LATIN CAPITAL LETTER G, <none>, <none>, <none>
+	key <AC06> { [ h, H, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER H, LATIN CAPITAL LETTER H, <none>, <none>, <none>
+	key <AC07> { [ j, J, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER J, LATIN CAPITAL LETTER J, <none>, <none>, <none>
+	key <AC08> { [ k, K, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER K, LATIN CAPITAL LETTER K, <none>, <none>, <none>
+	key <AC09> { [ l, L, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER L, LATIN CAPITAL LETTER L, <none>, <none>, <none>
+	key <AC10> { [ U00f6, U00d6, U003b, U003a ] }; // LATIN SMALL LETTER O WITH DIAERESIS, LATIN CAPITAL LETTER O WITH DIAERESIS, <none>, SEMICOLON, COLON
+	key <AC11> { [ U00e4, U00c4, U0027, U0022 ] }; // LATIN SMALL LETTER A WITH DIAERESIS, LATIN CAPITAL LETTER A WITH DIAERESIS, <none>, APOSTROPHE, QUOTATION MARK
+	
+	// ZXCV row
+	key <AB01> { [ z, Z, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER Z, LATIN CAPITAL LETTER Z, <none>, <none>, <none>
+	key <AB02> { [ x, X, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER X, LATIN CAPITAL LETTER X, <none>, <none>, <none>
+	key <AB03> { [ c, C, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER C, LATIN CAPITAL LETTER C, <none>, <none>, <none>
+	key <AB04> { [ v, V, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER V, LATIN CAPITAL LETTER V, <none>, <none>, <none>
+	key <AB05> { [ b, B, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER B, LATIN CAPITAL LETTER B, <none>, <none>, <none>
+	key <AB06> { [ n, N, NoSymbol, NoSymbol ] }; // LATIN SMALL LETTER N, LATIN CAPITAL LETTER N, <none>, <none>, <none>
+	key <AB07> { [ m, M, U00b5, NoSymbol ] }; // LATIN SMALL LETTER M, LATIN CAPITAL LETTER M, <none>, MICRO SIGN, <none>
+	key <AB08> { [ U002c, U003c, NoSymbol, NoSymbol ] }; // COMMA, LESS-THAN SIGN, <none>, <none>, <none>
+	key <AB09> { [ U002e, U003e, NoSymbol, NoSymbol ] }; // FULL STOP, GREATER-THAN SIGN, <none>, <none>, <none>
+	key <AB10> { [ U002f, U003f, NoSymbol, NoSymbol ] }; // SOLIDUS, QUESTION MARK, <none>, <none>, <none>
+	key <SPCE> { [ U0020, U0020, NoSymbol, NoSymbol ] }; // SPACE, SPACE, <none>, <none>, <none>
+	
+	// Right of left shift and left of Z
+	key <LSGT> { [ U005c, U007c, NoSymbol, NoSymbol ] }; // REVERSE SOLIDUS, VERTICAL LINE, <none>, <none>, <none>
+	
+	// Numpad decimal
+	key <KPDL> { [ U002e, U002e, U002c, U002c ] }; // FULL STOP, FULL STOP, , COMMA, COMMA
+};
