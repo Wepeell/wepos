@@ -71,5 +71,8 @@ run_script "/ctx/install-alsa-scarlett-gui.sh"
 
 
 
+# Remove autostart files
+rm -f /etc/skel/.config/autostart/steam.desktop
+
 # Clean package manager cache
 dnf5 clean all
