@@ -44,7 +44,7 @@ function run_script() {
 # Copy system_files to base image
 cp -r /ctx/system_files/* /
 
-# Remove error when installing packages from repos:
+# Remove following error when installing packages from repos:
 # gpg: Fatal: can't create directory '/root/.gnupg': No such file or directory
 mkdir -p /var/roothome
 
@@ -52,7 +52,7 @@ mkdir -p /var/roothome
 run_script "/ctx/install-fedora-pkgs.sh"
 
 # Install COPR packages
-# run_script "/ctx/install-copr-pkgs.sh"
+run_script "/ctx/install-copr-pkgs.sh"
 
 # Install Terra packages
 # run_script "/ctx/install-terra-pkgs.sh"
