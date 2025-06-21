@@ -71,6 +71,9 @@ run_script "/ctx/install-alsa-scarlett-gui.sh"
 
 
 
+# Apply default global theme
+sed -i 's/^LookAndFeelPackage=.*/LookAndFeelPackage=com.github.wepos.desktop/' /etc/xdg/kdeglobals
+
 # Remove autostart files
 rm -f /etc/skel/.config/autostart/steam.desktop
 
