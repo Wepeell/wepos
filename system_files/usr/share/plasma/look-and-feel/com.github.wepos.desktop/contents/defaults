@@ -1,0 +1,34 @@
+# Application Style
+[kdeglobals][KDE]
+widgetStyle=Breeze
+
+# Colors
+[kdeglobals][General]
+ColorScheme=BreezeDark
+
+# Icons
+[kdeglobals][Icons]
+Theme=breeze-dark
+
+# Plasma Style (default is Breeze)
+[plasmarc][Theme]
+name=default
+
+# Cursors
+[kcminputrc][Mouse]
+cursorTheme=Breeze_Light
+
+[kwinrc][WindowSwitcher]
+LayoutName=org.kde.breeze.desktop
+
+[kwinrc][DesktopSwitcher]
+LayoutName=org.kde.breeze.desktop
+
+# Windows Decorations
+[kwinrc][org.kde.kdecoration2]
+library=org.kde.breeze
+Theme=Breeze
+
+# Splash Screen
+[ksplashrc][KSplash]
+Theme=com.github.wepos.desktop
