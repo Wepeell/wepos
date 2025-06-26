@@ -5,7 +5,6 @@ target_dir := "$HOME/.config"
 source_file := source_dir + "/" + filename
 target_file := target_dir + "/" + filename
 home_bashrc := "$HOME/.bashrc"
-comment := "# Enable Starship Shell Prompt"
 init_script := 'eval "$(starship init bash)"'
 
 # Install Starship and Aurora config
@@ -65,7 +64,6 @@ uninstall-starship:
 	# Shell variables
 	target_file="{{target_file}}"
 	home_bashrc="{{home_bashrc}}"
-	comment="{{comment}}"
 	init_script='{{init_script}}'
 	
 	# Uninstall Starship from Homebrew
