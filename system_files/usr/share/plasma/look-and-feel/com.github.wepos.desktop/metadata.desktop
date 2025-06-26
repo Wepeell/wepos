@@ -1,0 +1,16 @@
+[Desktop Entry]
+Comment=WepOS - Theme variant of Aurora, Bazzite, BreezeDark and Vapor
+Name=WepOS
+Type=Service
+
+X-KDE-ServiceTypes=Plasma/LookAndFeel
+X-KDE-ParentApp=
+X-KDE-PluginInfo-Author=Wepeell
+X-KDE-PluginInfo-Category=
+X-KDE-PluginInfo-Email=
+X-KDE-PluginInfo-License=GPL-2.0+
+X-KDE-PluginInfo-Name=com.github.wepos.desktop
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Website=https://github.com/Wepeell/wepos
+X-Plasma-MainScript=defaults
+X-KDE-PluginInfo-License=GPLv2+
