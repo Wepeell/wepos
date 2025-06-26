@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-#dnf5 install -y tmux 
+# dnf5 install -y tmux 
 
 # Use a COPR Example:
 #
@@ -21,7 +21,7 @@ set -ouex pipefail
 
 #### Example for enabling a System Unit File
 
-#systemctl enable podman.socket
+# systemctl enable podman.socket
 
 
 
@@ -40,9 +40,6 @@ function run_script() {
 		exit 1
 	fi
 }
-
-# Copy system_files to base image
-cp -r /ctx/system_files/* /
 
 # Remove following error when installing packages from repos:
 # gpg: Fatal: can't create directory '/root/.gnupg': No such file or directory
@@ -69,13 +66,16 @@ run_script "/ctx/install-alsa-scarlett-gui.sh"
 # Remove base Bazzite packages
 # run_script "/ctx/remove-bazzite-pkgs.sh"
 
+# Clean package manager cache
+dnf5 clean all
 
+
+
+# Copy system_files to base image
+cp -r /ctx/system_files/* /
 
 # Apply default global theme
 sed -i 's/^LookAndFeelPackage=.*/LookAndFeelPackage=com.github.wepos.desktop/' /etc/xdg/kdeglobals
 
 # Remove autostart files
 rm -f /etc/skel/.config/autostart/steam.desktop
-
-# Clean package manager cache
-dnf5 clean all
