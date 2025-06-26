@@ -5,7 +5,6 @@ target_dir := "$HOME/.config"
 source_file := source_dir + "/" + filename
 target_file := target_dir + "/" + filename
 home_bashrc := "$HOME/.bashrc"
-comment := "# Enable Starship Shell Prompt"
 init_script := 'eval "$(starship init bash)"'
 
 # Install Starship and Aurora config
@@ -18,7 +17,6 @@ install-starship:
 	source_file="{{source_file}}"
 	target_file="{{target_file}}"
 	home_bashrc="{{home_bashrc}}"
-	comment="{{comment}}"
 	init_script='{{init_script}}'
 	
 	# Install Starship with Homebrew
@@ -42,10 +40,9 @@ install-starship:
 	# Configure .bashrc to enable Starship
 	echo "Configuring .bashrc to enable Starship..."
 	# Check for existing configuration
-	if ! grep -qxF "$comment" "$home_bashrc" && ! grep -qxF "$init_script" "$home_bashrc"; then
+	if ! grep -qxF "$init_script" "$home_bashrc"; then
 		if {
 			echo >> "$home_bashrc" &&
-			echo "$comment" >> "$home_bashrc" &&
 			echo "$init_script" >> "$home_bashrc"
 		}; then 
 			echo "Starship init script added successfully!"
@@ -67,7 +64,6 @@ uninstall-starship:
 	# Shell variables
 	target_file="{{target_file}}"
 	home_bashrc="{{home_bashrc}}"
-	comment="{{comment}}"
 	init_script='{{init_script}}'
 	
 	# Uninstall Starship from Homebrew
@@ -80,7 +76,7 @@ uninstall-starship:
 	
 	# Undo configurations to .bashrc
 	echo "Undoing configurations to .bashrc..."
-	sed -i "/^$/ {N; N; /^\n$comment\n$init_script$/d}" "$home_bashrc"
+	sed -i "/^$/ {N; /^\n$init_script$/d}" "$home_bashrc"
 	
 	echo "Starship removed!"
 	echo "Please, restart the terminal."
