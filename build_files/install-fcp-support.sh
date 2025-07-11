@@ -5,6 +5,12 @@ set -ouex pipefail
 # Repo directory
 REPO_DIR="/tmp/fcp-support"
 
+# Install directories
+BIN_DIR="/usr/bin"
+SYSTEMD_DIR="/usr/lib/systemd/system"
+UDEV_DIR="/usr/lib/udev/rules.d"
+DATA_DIR="/usr/share/fcp-server"
+
 # Install required packages for building
 dnf5 -y install \
 	make \
@@ -17,29 +23,30 @@ dnf5 -y install \
 	pkgconfig
 
 # Clone repo
-git clone https://github.com/geoffreybennett/fcp-support.git "$REPO_DIR"
+git clone https://github.com/Wepeell/fcp-support.git "$REPO_DIR"
 
 # Build
 make -C "$REPO_DIR"
 
-# Install
-mkdir -p /usr/bin
-mkdir -p /usr/lib/systemd/system
-mkdir -p /usr/lib/udev/rules.d
-mkdir -p /usr/share/fcp-server
+# Create install directories
+mkdir -p "$BIN_DIR"
+mkdir -p "$SYSTEMD_DIR"
+mkdir -p "$UDEV_DIR"
+mkdir -p "$DATA_DIR"
 
-cp /tmp/fcp-support/fcp-server /usr/bin
-cp /tmp/fcp-support/fcp-tool /usr/bin
-cp /tmp/fcp-support/systemd/fcp-server@.service /usr/lib/systemd/system
-cp /tmp/fcp-support/udev/99-fcp.rules /usr/lib/udev/rules.d
-cp /tmp/fcp-support/data/fcp-alsa-map-*.json /usr/share/fcp-server
+# Install
+cp "$REPO_DIR"/fcp-server "$BIN_DIR"
+cp "$REPO_DIR"/fcp-tool "$BIN_DIR"
+cp "$REPO_DIR"/systemd/fcp-server@.service "$SYSTEMD_DIR"
+cp "$REPO_DIR"/udev/99-fcp.rules "$UDEV_DIR"
+cp "$REPO_DIR"/data/fcp-alsa-map-*.json "$DATA_DIR"
 
 # Set permissions
-chmod 755 /usr/bin/fcp-server
-chmod 755 /usr/bin/fcp-tool
-chmod 644 /usr/lib/systemd/system/fcp-server@.service
-chmod 644 /usr/lib/udev/rules.d/99-fcp.rules
-chmod 644 /usr/share/fcp-server/fcp-alsa-map-*.json
+chmod 755 "$BIN_DIR"/fcp-server
+chmod 755 "$BIN_DIR"/fcp-tool
+chmod 644 "$SYSTEMD_DIR"/fcp-server@.service
+chmod 644 "$UDEV_DIR"/99-fcp.rules
+chmod 644 "$DATA_DIR"/fcp-alsa-map-*.json
 
 # Cleanup repo
 rm -rf "$REPO_DIR"
