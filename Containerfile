@@ -3,6 +3,8 @@ FROM scratch AS ctx
 COPY build_files /
 # Copy system_files as well
 COPY system_files /system_files
+# Copy repo_files too
+COPY repo_files /repo_files
 
 # Base Image
 FROM ghcr.io/ublue-os/bazzite:stable@sha256:2e4a612571d9845db2d1d0fb783c26a67bfcb8da463ba825a408d146e24e7f1d
