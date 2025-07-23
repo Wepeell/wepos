@@ -60,9 +60,6 @@ run_script "/ctx/install-fcp-support.sh"
 # Install Focusrite Scarlett tools
 run_script "/ctx/install-focusrite-scarlett.sh"
 
-# Remove base Bazzite packages
-# run_script "/ctx/remove-bazzite-pkgs.sh"
-
 # Clean package manager cache
 dnf5 clean all
 
