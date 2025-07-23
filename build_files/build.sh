@@ -68,8 +68,5 @@ dnf5 clean all
 # Copy system_files to base image
 cp -r /ctx/system_files/* /
 
-# Apply default global theme
-sed -i 's/^LookAndFeelPackage=.*/LookAndFeelPackage=com.github.wepos.desktop/' /etc/xdg/kdeglobals
-
 # Remove autostart files
 rm -f /etc/skel/.config/autostart/steam.desktop
