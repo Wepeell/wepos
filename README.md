@@ -24,6 +24,15 @@ wjust install-starship
 
 # Uninstall Starship and its config
 wjust uninstall-starship
+
+# Install WepOS Global Theme
+wjust install-global-theme
+
+# Install dynamic wallpapers
+wjust install-dynamic-wallpapers
+
+# Setup global theme and wallpapers
+wjust setup-theme
 ```
 
 ## Install
