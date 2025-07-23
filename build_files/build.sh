@@ -60,12 +60,6 @@ run_script "/ctx/install-fcp-support.sh"
 # Install Focusrite Scarlett tools
 run_script "/ctx/install-focusrite-scarlett.sh"
 
-# Install Scarlett4 Firmware
-# run_script "/ctx/install-scarlett4-firmware.sh"
-
-# Install ALSA Scarlett Control Panel
-# run_script "/ctx/install-alsa-scarlett-gui.sh"
-
 # Remove base Bazzite packages
 # run_script "/ctx/remove-bazzite-pkgs.sh"
 
