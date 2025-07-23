@@ -13,6 +13,7 @@ on:
       - test
     paths-ignore:
       - '**/README.md'
+      - 'repo_files/**'
   workflow_dispatch:
 
 env:
