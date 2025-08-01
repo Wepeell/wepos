@@ -1,5 +1,5 @@
 # Install WepOS Global Theme
-[group('Install')]
+[group('Theme')]
 install-global-theme:
 	#!/usr/bin/env bash
 	set -euo pipefail
@@ -18,7 +18,7 @@ install-global-theme:
 	fi
 
 # Install dynamic wallpapers
-[group('Install')]
+[group('Theme')]
 install-dynamic-wallpapers:
 	#!/usr/bin/env bash
 	set -euo pipefail
@@ -37,5 +37,5 @@ install-dynamic-wallpapers:
 	fi
 
 # Setup global theme and wallpapers
-[group('Install')]
+[group('Theme')]
 setup-theme: install-global-theme install-dynamic-wallpapers
