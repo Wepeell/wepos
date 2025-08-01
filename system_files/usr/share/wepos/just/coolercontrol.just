@@ -21,7 +21,7 @@ delete-karg:
 	# Variables
 	command="rpm-ostree kargs --delete=amdgpu.ppfeaturemask=0xffffffff"
 	
-	# Add karg
+	# Remove karg
 	echo "Running command: $command"
 	eval $command
 	echo 'Complete, please reboot to apply changes.'
