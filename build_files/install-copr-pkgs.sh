@@ -24,7 +24,7 @@ systemctl enable coolercontrold
 mkdir -p /etc/modules-load.d
 echo "nct6775" | tee /etc/modules-load.d/nct6775.conf
 
-# Add kernel argument to enable full AMD GPU functionality
+# Add kernel argument to enable all features for AMD GPUs
 mkdir -p /usr/lib/bootc/kargs.d
 cat <<EOF > /usr/lib/bootc/kargs.d/99-amdgpu.toml
 kargs = ["amdgpu.ppfeaturemask=0xffffffff"]
