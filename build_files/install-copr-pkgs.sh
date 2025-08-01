@@ -21,7 +21,17 @@ systemctl enable coolercontrold
 # sudo modprobe nct6775
 
 # Load the module after every reboot
+mkdir -p /etc/modules-load.d
 echo "nct6775" | tee /etc/modules-load.d/nct6775.conf
+
+# Enable AMD GPU fan control
+mkdir -p /usr/lib/bootc/kargs.d
+cat <<EOF > /usr/lib/bootc/kargs.d/99-amdgpu.toml
+kargs = ["amdgpu.ppfeaturemask=0xffffffff"]
+EOF
+
+# If above doesn't work, run this manually on live system
+# rpm-ostree kargs --append-if-missing=amdgpu.ppfeaturemask=0xffffffff
 
 # Disable COPR repo
 dnf5 -y copr disable codifryed/CoolerControl
