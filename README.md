@@ -12,28 +12,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 
 ## Custom wjust commands
 
-```bash
-# Install custom keyboard layouts
-wjust install-keyboard-layouts
-
-# Install Nerd Fonts with Homebrew
-wjust install-nerd-fonts
-
-# Install Starship with Homebrew and enable it with Aurora's config
-wjust install-starship
-
-# Uninstall Starship and its config
-wjust uninstall-starship
-
-# Install WepOS Global Theme
-wjust install-global-theme
-
-# Install dynamic wallpapers
-wjust install-dynamic-wallpapers
-
-# Setup global theme and wallpapers
-wjust setup-theme
-```
+Most of the personal customizations are done in the userspace with just receipes. Run `wjust` to list them all.
 
 ## Install
 
