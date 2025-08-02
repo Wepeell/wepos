@@ -12,7 +12,9 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 
 ## Custom wjust commands
 
-Most of the personal customizations are done in the userspace with just receipes. Run `wjust` to list them all.
+Most of the personal customizations are done in the userspace with just recipes. 
+
+Run `wjust` to list them all.
 
 ## Install
 
