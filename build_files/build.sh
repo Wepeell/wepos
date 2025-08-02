@@ -51,9 +51,6 @@ run_script "/ctx/install-fedora-pkgs.sh"
 # Install COPR packages
 run_script "/ctx/install-copr-pkgs.sh"
 
-# Install Terra packages
-# run_script "/ctx/install-terra-pkgs.sh"
-
 # Install Linux FCP Support Tools
 run_script "/ctx/install-fcp-support.sh"
 
