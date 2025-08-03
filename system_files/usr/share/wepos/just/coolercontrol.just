@@ -46,8 +46,8 @@ install-nct6775:
 	# https://github.com/lm-sensors/lm-sensors/issues/416#issuecomment-2359409670
 	
 	# Load kernel module on booted system
-	echo "Loading nct6775 kernel module..."
-	sudo modprobe nct6775
+	# echo "Loading nct6775 kernel module..."
+	# sudo modprobe nct6775
 	
 	# Install kernel module for persistence across reboots
 	echo "Installing nct6775 kernel module for automatic loading on boot..."
