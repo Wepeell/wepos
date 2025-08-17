@@ -14,5 +14,6 @@ install-flatpaks:
 		org.keepassxc.KeePassXC \
 		org.qbittorrent.qBittorrent \
 		org.telegram.desktop \
+		org.virt_manager.virt-manager \
 	
 	echo "Flatpaks installed."
