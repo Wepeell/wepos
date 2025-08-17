@@ -7,8 +7,12 @@ install-flatpaks:
 	echo "Installing Flatpaks..."
 	
 	flatpak install --system -y flathub \
+		com.borgbase.Vorta \
+		com.discordapp.Discord \
 		com.usebottles.bottles \
 		io.github.mpc_qt.mpc-qt \
-		com.borgbase.Vorta
+		org.keepassxc.KeePassXC \
+		org.qbittorrent.qBittorrent \
+		org.telegram.desktop \
 	
 	echo "Flatpaks installed."
