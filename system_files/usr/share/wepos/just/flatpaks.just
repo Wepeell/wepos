@@ -16,6 +16,7 @@ install-flatpaks:
 		org.qbittorrent.qBittorrent \
 		org.telegram.desktop \
 		org.virt_manager.virt-manager \
+		org.virt_manager.virt_manager.Extension.Qemu \
 
 	echo "Flatpaks installed."
 
