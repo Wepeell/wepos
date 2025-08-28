@@ -9,8 +9,10 @@ install-flatpaks:
 	flatpak install --system -y flathub \
 		com.borgbase.Vorta \
 		com.discordapp.Discord \
+		com.github.qarmin.czkawka \
 		com.usebottles.bottles \
 		io.github.mpc_qt.mpc-qt \
+		io.github.radiolamp.mangojuice \
 		org.keepassxc.KeePassXC \
 		org.photoqt.PhotoQt \
 		org.qbittorrent.qBittorrent \
