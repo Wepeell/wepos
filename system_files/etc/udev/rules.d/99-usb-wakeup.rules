@@ -1,0 +1,15 @@
+# Disable waking up for all USB devices
+# ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTR{power/wakeup}="disabled"
+# ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", TEST=="power/wakeup", ATTR{power/wakeup}="disabled"
+# ACTION=="add", SUBSYSTEM=="usb", TEST=="power/wakeup", ATTR{power/wakeup}="disabled"
+
+### Use "lsusb" in terminal to identify devices
+### Example:
+### Bus 001 Device 011: ID 25a7:fa7c Areson Technology Corp Pulsar Xlite Wireless
+### "25a7" is the vendor ID and "fa7c" is the product ID
+
+# Disable waking up from Pulsar Xlite V2
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="25a7", ATTRS{idProduct}=="fa7c", ATTR{power/wakeup}="disabled"
+
+# Disable waking up from Keychron V6
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0361", ATTR{power/wakeup}="disabled"
