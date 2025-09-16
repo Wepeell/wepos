@@ -3,5 +3,5 @@
 
 // Set default wallpaper
 applet.currentConfigGroup = ["Wallpaper", "com.github.zzag.dynamic", "General"]
-applet.writeConfig("Image", "file:///usr/share/wepos/theme/wallpapers/Dynamic/Lakeside.avif")
+applet.writeConfig("Image", "file:///usr/share/wepos/theme/wallpapers/Dynamic/the_lair.avif")
 applet.reloadConfig()
