@@ -53,5 +53,7 @@ EOF
 # https://bugs.winehq.org/show_bug.cgi?id=56961
 
 # When installing Fractal-Bot use version "Fractal-Bot-Win-v3p00p03.exe"
-# Regressions in newer versions of Fractal-Bot
-# Links: https://forum.fractalaudio.com/threads/axe-fx-ii-users-on-linux-use-fractal-bot-v3p00p03.203669/
+# There are regressions in newer versions of Fractal-Bot
+# https://forum.fractalaudio.com/threads/axe-fx-ii-users-on-linux-use-fractal-bot-v3p00p03.203669/
+
+# If using Bottles turn off DXVK and VKD3D to prevent Axe-Edit from crashing
