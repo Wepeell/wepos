@@ -57,6 +57,9 @@ run_script "/ctx/install-fcp-support.sh"
 # Install Focusrite Scarlett tools
 run_script "/ctx/install-focusrite-scarlett.sh"
 
+# Install Fractal Audio Axe-FX 2 USB firmware
+run_script "/ctx/install-fractalaudio-axefx2.sh"
+
 # Clean package manager cache
 dnf5 clean all
 
