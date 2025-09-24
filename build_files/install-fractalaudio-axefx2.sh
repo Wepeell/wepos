@@ -46,3 +46,12 @@ cat <<EOF > "$UDEV_DIR/$UDEV_FILE"
 # Fractal Audio Systems Axe-FX II
 ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2466", ATTR{idProduct}=="0003", RUN+="'$FXLOAD_PATH' -t fx2lp -I '$FIRMWARE_TARGET/$FIRMWARE_BIN' -D \$env{DEVNAME}"
 EOF
+
+### Important notes
+# When installing Axe-Edit for Axe-Fx 2 use Wine version "lutris-6.21-6"
+# There is a regression in Wine around version 7.2
+# https://bugs.winehq.org/show_bug.cgi?id=56961
+
+# When installing Fractal-Bot use version "Fractal-Bot-Win-v3p00p03.exe"
+# Regressions in newer versions of Fractal-Bot
+# Links: https://forum.fractalaudio.com/threads/axe-fx-ii-users-on-linux-use-fractal-bot-v3p00p03.203669/
