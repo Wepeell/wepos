@@ -14,6 +14,7 @@ install-flatpaks:
 		io.github.mpc_qt.mpc-qt \
 		io.github.radiolamp.mangojuice \
 		org.keepassxc.KeePassXC \
+		org.musicbrainz.Picard \
 		org.photoqt.PhotoQt \
 		org.qbittorrent.qBittorrent \
 		org.telegram.desktop \
