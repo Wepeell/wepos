@@ -14,8 +14,10 @@ install-flatpaks:
 		io.github.mpc_qt.mpc-qt \
 		io.github.radiolamp.mangojuice \
 		org.keepassxc.KeePassXC \
+		org.musicbrainz.Picard \
 		org.photoqt.PhotoQt \
 		org.qbittorrent.qBittorrent \
+		org.strawberrymusicplayer.strawberry \
 		org.telegram.desktop \
 		org.virt_manager.virt-manager \
 		org.virt_manager.virt_manager.Extension.Qemu \
