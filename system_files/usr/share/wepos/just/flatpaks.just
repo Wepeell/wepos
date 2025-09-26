@@ -13,6 +13,7 @@ install-flatpaks:
 		com.usebottles.bottles \
 		io.github.mpc_qt.mpc-qt \
 		io.github.radiolamp.mangojuice \
+		org.fooyin.fooyin \
 		org.keepassxc.KeePassXC \
 		org.musicbrainz.Picard \
 		org.photoqt.PhotoQt \
