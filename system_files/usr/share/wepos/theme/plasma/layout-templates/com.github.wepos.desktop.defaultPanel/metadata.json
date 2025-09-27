@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/LayoutTemplate",
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "",
+                "Name": "Wepeell"
+            }
+        ],
+        "Category": "",
+        "Description": "WepOS - Non-floating default panel featuring minimize all windows",
+        "Id": "com.github.wepos.desktop.defaultPanel",
+        "License": "LGPLv2+",
+        "Name": "WepOS Default Panel",
+        "Website": "https://github.com/Wepeell/wepos"
+    },
+    "X-Plasma-ContainmentCategories": [
+        "panel"
+    ],
+    "X-Plasma-Shell": "plasmashell"
+}
