@@ -1,7 +1,7 @@
 // Set config group
 applet.currentConfigGroup = ["General"]
 
-// General: Sort applications alphabetically
+// General: Sort applications alphabetically: ON
 applet.writeConfig("alphaSort", "true")
 
 // Icon

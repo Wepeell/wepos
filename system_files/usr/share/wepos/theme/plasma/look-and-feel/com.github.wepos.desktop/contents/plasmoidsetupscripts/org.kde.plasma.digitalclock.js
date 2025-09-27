@@ -10,7 +10,7 @@ applet.writeConfig("displayTimezoneFormat", "UTCOffset")
 // First day of week: Monday
 applet.writeConfig("firstDayOfWeek", "1")
 
-// Show week numbers
+// Show week numbers: ON
 applet.writeConfig("showWeekNumbers", "true")
 
 // Time display: 24-Hour

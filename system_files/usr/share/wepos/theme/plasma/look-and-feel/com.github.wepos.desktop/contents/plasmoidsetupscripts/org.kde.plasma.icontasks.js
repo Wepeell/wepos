@@ -4,7 +4,7 @@ applet.currentConfigGroup = ["General"]
 // Clicking grouped task: Shows small window previews
 applet.writeConfig("groupedTaskVisualization", "1")
 
-// General: Mute task when clicking indicator
+// General: Mute task when clicking indicator: OFF
 applet.writeConfig("interactiveMute", "false")
 
 // Set default pinned apps
@@ -18,7 +18,7 @@ applet.writeConfig("launchers", [
     "preferred://browser"
 ]);
 
-// General: Show media and volume controls in tooltip
+// General: Show media and volume controls in tooltip: OFF
 applet.writeConfig("tooltipControls", "false")
 
 // Reload config
