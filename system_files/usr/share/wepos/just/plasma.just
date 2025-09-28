@@ -14,7 +14,7 @@ set-delay-plasma:
 	set -euo pipefail
 
 	# Set delay
-	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "200"
+	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "400"
 
 # Configure keyboard settings
 [group('KDE Plasma')]
