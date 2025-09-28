@@ -15,3 +15,30 @@ set-delay-plasma:
 
 	# Set delay
 	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "200"
+
+# Configure keyboard settings
+[group('KDE Plasma')]
+setup-keyboard:
+	#!/usr/bin/env bash
+	set -euo pipefail
+
+	## Model
+	# This is not needed for pc104
+	# kwriteconfig6 --file "kxkbrc" --group "Layout" --key "Model" "pc104"
+
+	## NumLock on startup
+	# 0 = Turn on
+	# 1 = Turn off
+	kwriteconfig6 --file "kcminputrc" --group "Keyboard" --key "NumLock" "0"
+
+	## Layouts
+	# Turn on keyboard layouts
+	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "Use" "true"
+	# Add keyboard layouts
+	# US and SE language
+	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "LayoutList" "us,se"
+	# Add keyboard variants
+	# US-SE and SE-US variants
+	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "VariantList" "us-se,se-us"
+	# Not sure what this does but it is added with the other settings
+	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "DisplayNames" ","
