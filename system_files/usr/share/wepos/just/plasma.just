@@ -42,3 +42,15 @@ setup-keyboard:
 	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "VariantList" "us-se,se-us"
 	# Not sure what this does but it is added with the other settings
 	kwriteconfig6 --file "kxkbrc" --group "Layout" --key "DisplayNames" ","
+
+	## Shortcuts
+	# Change layout
+	# Default shortcut is "Meta+Alt+K"
+	# Set to Alt+Shift
+	kwriteconfig6 --file "kglobalshortcutsrc" --group "KDE Keyboard Layout Switcher" --key "Switch to Next Keyboard Layout" "Alt+Shift,Meta+Alt+K,Switch to Next Keyboard Layout"
+	# Switch to last used layout
+	# Default shortcut is "Meta+Alt+L"
+	# Set to none
+	kwriteconfig6 --file "kglobalshortcutsrc" --group "KDE Keyboard Layout Switcher" --key "Switch to Last-Used Keyboard Layout" ",Meta+Alt+L,Switch to Last-Used Keyboard Layout"
+
+	echo "Log out and in to apply these keyboard changes"
