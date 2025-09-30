@@ -6,14 +6,18 @@ append-karg:
 	
 	# Add karg
 	echo "Adding karg to enable all features for AMD GPUs..."
+	echo
 	rpm-ostree kargs --append-if-missing=amdgpu.ppfeaturemask=0xffffffff
+	echo
 	
 	# Check karg
 	if rpm-ostree kargs | grep -q 'amdgpu.ppfeaturemask=0xffffffff'; then
 		echo "Kernel argument successfully added."
 		echo "Please reboot to apply changes."
+		echo
 	else
 		echo "Failed to add kernel argument." >&2
+		echo
 		exit 1
 	fi
 
@@ -25,15 +29,19 @@ delete-karg:
 	
 	# Remove karg
 	echo "Removing karg for AMD GPUs..."
-	rpm-ostree kargs --delete=amdgpu.ppfeaturemask=0xffffffff
+	echo
+	rpm-ostree kargs --delete=amdgpu.ppfeaturemask=0xffffffff || true
+	echo
 	
 	# Check karg
 	if rpm-ostree kargs | grep -q 'amdgpu.ppfeaturemask=0xffffffff'; then
 		echo "Kernel argument still present, removal may have failed." >&2
+		echo
 		exit 1
 	else
 		echo "Kernel argument successfully removed."
 		echo "Please reboot to apply changes."
+		echo
 	fi
 
 # Load and install the "nct6775" kernel module for "ASUS ROG Strix B650E-F Gaming Wifi"
