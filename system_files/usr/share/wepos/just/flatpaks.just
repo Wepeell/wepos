@@ -1,5 +1,5 @@
 # Install Flatpaks
-[group('Install')]
+[group('Flatpaks')]
 install-flatpaks:
 	#!/usr/bin/env bash
 	set -euo pipefail
