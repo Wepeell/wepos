@@ -8,7 +8,7 @@ _default:
 import "/usr/share/wepos/just/coolercontrol.just"
 import "/usr/share/wepos/just/flatpaks.just"
 import "/usr/share/wepos/just/git.just"
-import "/usr/share/wepos/just/keyboard-layouts.just"
+import "/usr/share/wepos/just/keyboard.just"
 import "/usr/share/wepos/just/nerd-fonts.just"
 import "/usr/share/wepos/just/plasma.just"
 import "/usr/share/wepos/just/starship.just"
