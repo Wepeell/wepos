@@ -13,11 +13,16 @@ install-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
-	# Shell variables
-	source_file="{{source_file}}"
-	target_file="{{target_file}}"
-	home_bashrc="{{home_bashrc}}"
-	init_script='{{init_script}}'
+	# Variables
+	source_dir="/usr/share/wepos/starship"
+	target_dir="${HOME}/.config"
+	filename="starship.toml"
+
+	source_file="${source_dir}/${filename}"
+	target_file="${target_dir}/${filename}"
+
+	home_bashrc="${HOME}/.bashrc"
+	init_script='eval "$(starship init bash)"'
 
 	# Install Starship with Homebrew
 	echo "Installing Starship with Homebrew..."
@@ -26,7 +31,7 @@ install-starship:
 	echo
 
 	# Copy Aurora starship.toml config
-	echo "Copying Aurora starship.toml config into ${target_file} ..."
+	echo "Copying Aurora ${filename} config into ${target_dir} ..."
 	if cp "$source_file" "$target_file"; then
 		echo "Copying succesful!"
 		echo
@@ -36,11 +41,11 @@ install-starship:
 	fi
 
 	# Configure .bashrc to enable Starship
-	echo "Configuring .bashrc to enable Starship..."
+	echo "Configuring ${home_bashrc} to enable Starship..."
 	# Check for existing configuration
 	if ! grep -qxF "$init_script" "$home_bashrc"; then
 		# Add new line and init script
-		if { echo >> "$home_bashrc" && echo "$init_script" >> "$home_bashrc" }; then
+		if { echo >> "$home_bashrc" && echo "$init_script" >> "$home_bashrc"; }; then
 			echo "Starship init script added successfully!"
 			echo
 		else
