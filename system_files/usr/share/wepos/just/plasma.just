@@ -5,22 +5,33 @@ restart-plasma:
 	set -euo pipefail
 
 	# Restart systemd Plasma service
+	echo "Restarting plasmashell..."
 	systemctl --user restart plasma-plasmashell
+	echo
 
 # Configure delay on hover preview and tooltip
 [group('KDE Plasma')]
-set-delay-plasma:
+delay-plasma:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
+	# Delay in milliseconds
+	delay="400"
+
 	# Set delay
-	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "400"
+	echo "Setting preview hover delay to ${delay} ms..."
+	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "$delay"
+	echo
+	echo "Restart plasmashell for change to take effect."
+	echo
 
 # Configure Region & Language
 [group('KDE Plasma')]
 setup-locale:
 	#!/usr/bin/env bash
 	set -euo pipefail
+
+	echo "Configuring Region & Language in KDE Plasma System Settings..."
 
 	## Language
 	# kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LANG" "en_US.utf8"
@@ -52,3 +63,6 @@ setup-locale:
 
 	## Data and Storage Sizes
 	# Leave as default
+
+	echo "Done."
+	echo
