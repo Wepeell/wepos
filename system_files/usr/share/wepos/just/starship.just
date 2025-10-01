@@ -59,6 +59,9 @@ install-starship:
 		echo
 	fi
 
+	echo "Restart terminal for changes to take effect."
+	echo
+
 # Uninstall Starship
 [group('Uninstall')]
 uninstall-starship:
