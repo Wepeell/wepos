@@ -39,18 +39,19 @@ install-starship:
 	echo "Configuring .bashrc to enable Starship..."
 	# Check for existing configuration
 	if ! grep -qxF "$init_script" "$home_bashrc"; then
-		if {
-			echo >> "$home_bashrc" &&
-			echo "$init_script" >> "$home_bashrc"
-		}; then
+		# Add new line and init script
+		if { echo >> "$home_bashrc" && echo "$init_script" >> "$home_bashrc" }; then
 			echo "Starship init script added successfully!"
+			echo
 		else
 			echo "Failed to add Starship init script to ${home_bashrc}!"
 			echo "Check ${home_bashrc} manually."
+			echo
 		fi
 	else
 		echo "Detected existing Starship init script in ${home_bashrc}."
 		echo "Check ${home_bashrc} manually."
+		echo
 	fi
 
 # Uninstall Starship
@@ -67,14 +68,18 @@ uninstall-starship:
 	# Uninstall Starship from Homebrew
 	echo "Uninstalling Starship..."
 	brew uninstall starship || true
+	echo
 
 	# Remove starship.toml config
 	echo "Removing starship.toml config..."
 	rm -f "$target_file" || true
+	echo
 
 	# Undo configurations to .bashrc
 	echo "Undoing configurations to .bashrc..."
 	sed -i "/^$/ {N; /^\n$init_script$/d}" "$home_bashrc"
+	echo
 
 	echo "Starship removed!"
 	echo "Please, restart the terminal."
+	echo
