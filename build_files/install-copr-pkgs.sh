@@ -13,6 +13,7 @@ packages=(
 	coolercontrold
 	coolercontrol-liqctld
 	coolercontrol
+	starship
 )
 
 # Enable COPR repos
