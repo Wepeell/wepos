@@ -5,6 +5,7 @@ set -ouex pipefail
 # Repos array
 repos=(
 	codifryed/CoolerControl
+	atim/starship
 )
 
 # Packages array
@@ -12,6 +13,7 @@ packages=(
 	coolercontrold
 	coolercontrol-liqctld
 	coolercontrol
+	starship
 )
 
 # Enable COPR repos
@@ -30,3 +32,11 @@ done
 # CoolerControl
 # Enable daemon
 systemctl enable coolercontrold
+
+# Starship
+# Insert into bashrc without expanding $(...)
+cat <<'EOF' >> "/etc/bashrc"
+
+# Enable Starship shell prompt
+eval "$(starship init bash)"
+EOF
