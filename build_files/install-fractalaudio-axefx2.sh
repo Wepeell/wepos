@@ -5,15 +5,15 @@ set -ouex pipefail
 ### Variables
 
 # Axe-Fx 2 USB firmware
-FIRMWARE_SOURCE="/ctx/repo_files/axefx2-usb-firmware"
-FIRMWARE_TARGET="/usr/share/usb/FractalAudio/axefx2"
-FIRMWARE_BIN="axefx2load.hex"
+firmware_source="/ctx/repo_files/axefx2-usb-firmware"
+firmware_target="/usr/share/usb/FractalAudio/axefx2"
+firmware_bin="axefx2load.hex"
 
 # udev rules
-UDEV_DIR="/etc/udev/rules.d"
-UDEV_FILE="99-fractalaudio.rules"
-# FXLOAD_PATH="$(which fxload)"
-FXLOAD_PATH="/usr/bin/fxload"
+udev_dir="/etc/udev/rules.d"
+udev_file="99-fractalaudio.rules"
+# fxload_path="$(which fxload)"
+fxload_path="/usr/bin/fxload"
 
 ### Install required packages
 # dnf5 -y install \
@@ -22,29 +22,29 @@ FXLOAD_PATH="/usr/bin/fxload"
 ### Install USB firmware binary
 
 # Create directory
-mkdir -p "$FIRMWARE_TARGET"
+mkdir -p "$firmware_target"
 
 # Set permissions for both "FractalAudio" and "axefx2" directories
-chmod 755 "$FIRMWARE_TARGET" \
-	"${FIRMWARE_TARGET%/*}"
+chmod 755 "$firmware_target" \
+	"${firmware_target%/*}"
 
 # Copy binary
-cp "$FIRMWARE_SOURCE/$FIRMWARE_BIN" "$FIRMWARE_TARGET/$FIRMWARE_BIN"
+cp "${firmware_source}/${firmware_bin}" "${firmware_target}/${firmware_bin}"
 
 # Set binary permissions
-chmod 644 "$FIRMWARE_TARGET/$FIRMWARE_BIN"
+chmod 644 "${firmware_target}/${firmware_bin}"
 
 ### Install udev rule
 
 # Create directory
-mkdir -p "$UDEV_DIR"
+mkdir -p "$udev_dir"
 
 # Create udev rules file
-cat <<EOF > "$UDEV_DIR/$UDEV_FILE"
+cat <<EOF > "${udev_dir}/${udev_file}"
 ### fractalaudio.rules - udev rules for uploading USB firmware to Fractal Audio Systems devices
 
 # Fractal Audio Systems Axe-FX II
-ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2466", ATTR{idProduct}=="0003", RUN+="'$FXLOAD_PATH' -t fx2lp -I '$FIRMWARE_TARGET/$FIRMWARE_BIN' -D \$env{DEVNAME}"
+ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2466", ATTR{idProduct}=="0003", RUN+="'$fxload_path' -t fx2lp -I '${firmware_target}/${firmware_bin}' -D \$env{DEVNAME}"
 EOF
 
 ### Important notes
