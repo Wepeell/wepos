@@ -39,12 +39,12 @@ install-nerd-fonts:
 
 # Install Starship and Aurora config
 [group('Homebrew')]
-install-starship:
+_install-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
 	# Variables
-	source_dir="/usr/share/wepos/starship"
+	source_dir="/etc"
 	target_dir="${HOME}/.config"
 	filename="starship.toml"
 
@@ -94,7 +94,7 @@ install-starship:
 
 # Uninstall Starship
 [group('Homebrew')]
-uninstall-starship:
+_uninstall-starship:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
