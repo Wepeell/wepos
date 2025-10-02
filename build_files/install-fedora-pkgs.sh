@@ -9,6 +9,7 @@ set -ouex pipefail
 
 # Packages array
 packages=(
+	borgbackup
 	plasma-wallpapers-dynamic
 	plasma-wallpapers-dynamic-builder
 )
