@@ -5,6 +5,7 @@ set -ouex pipefail
 # Repos array
 repos=(
 	codifryed/CoolerControl
+	atim/starship
 )
 
 # Packages array
