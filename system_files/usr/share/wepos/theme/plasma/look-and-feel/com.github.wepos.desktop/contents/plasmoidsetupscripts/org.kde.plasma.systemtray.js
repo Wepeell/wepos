@@ -9,7 +9,7 @@ if (systemtrayId) {
 applet.currentConfigGroup = ["General"]
 
 // Entries
-applet.writeConfig("hiddenItems", "org.kde.plasma.brightness")
+applet.writeConfig("hiddenItems", "org.kde.plasma.brightness,org.kde.plasma.mediacontroller")
 
 // Reload config
 applet.reloadConfig()
