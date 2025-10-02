@@ -7,7 +7,11 @@ set -ouex pipefail
 # dnf5 -y config-manager setopt "rpmfusion-free".enabled=true
 # dnf5 -y config-manager setopt "*rpmfusion*".enabled=true
 
-# Install Fedora packages
-dnf5 -y install \
-	plasma-wallpapers-dynamic \
+# Packages array
+packages=(
+	plasma-wallpapers-dynamic
 	plasma-wallpapers-dynamic-builder
+)
+
+# Install Fedora packages from array
+dnf5 -y install "${packages[@]}"
