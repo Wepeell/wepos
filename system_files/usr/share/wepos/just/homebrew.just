@@ -44,7 +44,7 @@ _install-starship:
 	set -euo pipefail
 
 	# Variables
-	source_dir="/etc"
+	source_dir="/usr/share/starship"
 	target_dir="${HOME}/.config"
 	filename="starship.toml"
 
