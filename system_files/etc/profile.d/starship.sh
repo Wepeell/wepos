@@ -1,7 +1,16 @@
-# This sets the config path for Starship prompt system-wide
-export STARSHIP_CONFIG=/etc/starship.toml
-
-# To override this per user, unset the environmental variable in $HOME/.bashrc like this:
-# unset STARSHIP_CONFIG
-
-# Starship will then fall back to using the default path $HOME/.config/starship.toml
+# Check if running in Bash
+if [ -n "$BASH" ] && [ -n "$BASH_VERSION" ]; then
+	# Check if Starship is installed
+	if command -v starship &>/dev/null; then
+			# Check for user specific config
+			if [ -f "${HOME}/.config/starship.toml" ]; then
+				# Use user config by using the default path
+				unset STARSHIP_CONFIG
+			else
+				# Use global config
+				export STARSHIP_CONFIG=/usr/share/starship/starship.toml
+			fi
+		# Enable Starship prompt
+		eval "$(starship init bash)"
+	fi
+fi
