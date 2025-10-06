@@ -11,7 +11,8 @@ repos=(
 # Packages array
 packages=(
 	coolercontrold
-	coolercontrol-liqctld
+	# coolercontrol-liqctld
+	python3-liquidctl
 	coolercontrol
 	starship
 )
