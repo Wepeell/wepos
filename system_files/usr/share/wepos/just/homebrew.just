@@ -14,7 +14,6 @@ reinstall-homebrew:
 	echo "systemctl start brew-setup.service"
 	echo
 	echo "Restart terminal to use brew."
-	echo
 
 # Install Nerd Fonts
 [group('Homebrew')]
@@ -35,7 +34,6 @@ install-nerd-fonts:
 	brew install --cask "${nerdfonts[@]}"
 	echo
 	echo "Nerd Fonts installed."
-	echo
 
 # Install Starship and Aurora config
 [group('Homebrew')]
@@ -90,7 +88,6 @@ _install-starship:
 	fi
 
 	echo "Restart terminal for changes to take effect."
-	echo
 
 # Uninstall Starship
 [group('Homebrew')]
@@ -120,4 +117,3 @@ _uninstall-starship:
 
 	echo "Starship removed!"
 	echo "Please, restart the terminal."
-	echo
