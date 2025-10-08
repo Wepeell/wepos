@@ -34,11 +34,9 @@ _git-ssh-key:
 		# Display the public key
 		echo "Your SSH public key:"
 		cat "${HOME}/.ssh/id_ed25519.pub"
-		echo
 	else
 		echo "Using existing SSH key ~/.ssh/id_ed25519.pub."
 		echo "Manually verify that your email $git_email matches SSH key."
-		echo
 	fi
 
 # Setup Git
