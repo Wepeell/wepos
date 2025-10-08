@@ -137,3 +137,23 @@ install-formulas:
 	brew install "${formulas[@]}"
 	echo
 	echo "Formulas installed."
+
+# Install casks
+[group('Homebrew')]
+install-casks:
+	#!/usr/bin/env bash
+	set -euo pipefail
+
+	# Casks array
+	casks=(
+		font-fira-code-nerd-font
+		# font-noto-nerd-font
+		# font-symbols-only-nerd-font
+	)
+
+	# Install casks from array
+	echo "Installing Homebrew casks..."
+	echo
+	brew install --cask "${casks[@]}"
+	echo
+	echo "Casks installed."
