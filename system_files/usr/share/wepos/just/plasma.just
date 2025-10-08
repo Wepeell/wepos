@@ -7,7 +7,6 @@ restart-plasma:
 	# Restart systemd Plasma service
 	echo "Restarting plasmashell..."
 	systemctl --user restart plasma-plasmashell
-	echo
 
 # Configure delay on hover preview and tooltip
 [group('KDE Plasma')]
@@ -21,9 +20,7 @@ delay-plasma:
 	# Set delay
 	echo "Setting preview hover delay to ${delay} ms..."
 	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "$delay"
-	echo
 	echo "Restart plasmashell for change to take effect."
-	echo
 
 # Configure Region & Language
 [group('KDE Plasma')]
@@ -65,4 +62,3 @@ setup-locale:
 	# Leave as default
 
 	echo "Done."
-	echo
