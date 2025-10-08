@@ -117,3 +117,23 @@ _uninstall-starship:
 
 	echo "Starship removed!"
 	echo "Please, restart the terminal."
+
+# Install formulas
+[group('Homebrew')]
+install-formulas:
+	#!/usr/bin/env bash
+	set -euo pipefail
+
+	# Formulas array
+	formulas=(
+		# borgbackup
+		clamav
+		# starship
+	)
+
+	# Install formulas from array
+	echo "Installing Homebrew formulas..."
+	echo
+	brew install "${formulas[@]}"
+	echo
+	echo "Formulas installed."
