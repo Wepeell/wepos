@@ -10,10 +10,13 @@ repos=(
 
 # Packages array
 packages=(
+	### CoolerControl
 	coolercontrold
-	# coolercontrol-liqctld
-	python3-liquidctl
 	coolercontrol
+	# liquidctl
+	python3-liquidctl
+	###
+
 	starship
 )
 
