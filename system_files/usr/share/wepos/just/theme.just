@@ -12,10 +12,8 @@ _install-global-theme:
 	echo "Copying global theme files..."
 	if cp -r "$source" "$target"; then
 		echo "Copying succesful!"
-		echo
 	else
 		echo "Copying failed!"
-		echo
 	fi
 
 # Install dynamic wallpapers
@@ -32,12 +30,13 @@ _install-dynamic-wallpapers:
 	echo "Copying dynamic wallpaper files..."
 	if cp -r "$source" "$target"; then
 		echo "Copying succesful!"
-		echo
 	else
 		echo "Copying failed!"
-		echo
 	fi
 
 # Setup global theme and wallpapers
 [group('Theme')]
-setup-theme: _install-global-theme _install-dynamic-wallpapers
+setup-theme:
+	@just _install-global-theme
+	@echo
+	@just _install-dynamic-wallpapers

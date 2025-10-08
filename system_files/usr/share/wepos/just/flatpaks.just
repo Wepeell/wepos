@@ -28,4 +28,3 @@ install-flatpaks:
 	flatpak install --system -y flathub "${flatpaks[@]}"
 	echo
 	echo "Flatpaks installed."
-	echo

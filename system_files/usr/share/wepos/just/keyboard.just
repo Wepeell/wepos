@@ -12,10 +12,8 @@ _install-keyboard-layouts:
 	echo "Copying keyboard layout files into ${target}/xkb ..."
 	if cp -r "$source" "$target"; then
 		echo "Copying succesful!"
-		echo
 	else
 		echo "Copying failed!"
-		echo
 	fi
 
 # Configure keyboard in KDE Plasma System Settings
@@ -58,7 +56,6 @@ _configure-keyboard-settings:
 	kwriteconfig6 --file "kglobalshortcutsrc" --group "KDE Keyboard Layout Switcher" --key "Switch to Last-Used Keyboard Layout" ",Meta+Alt+L,Switch to Last-Used Keyboard Layout"
 
 	echo "Log out and back in to apply these keyboard settings."
-	echo
 
 # Setup keyboard
 [group('Keyboard')]
@@ -66,4 +63,5 @@ setup-keyboard:
 	@echo "Setting up custom keyboard layouts and settings..."
 	@echo
 	@just _install-keyboard-layouts
+	@echo
 	@just _configure-keyboard-settings

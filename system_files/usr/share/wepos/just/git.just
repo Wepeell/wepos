@@ -7,7 +7,6 @@ _git-username-email:
 	# Ask for Git username and email
 	read -p "Enter your Git username: " git_username
 	read -p "Enter your Git email: " git_email
-	echo
 
 	# Configure Git
 	git config --global user.name "$git_username"
@@ -34,11 +33,9 @@ _git-ssh-key:
 		# Display the public key
 		echo "Your SSH public key:"
 		cat "${HOME}/.ssh/id_ed25519.pub"
-		echo
 	else
 		echo "Using existing SSH key ~/.ssh/id_ed25519.pub."
 		echo "Manually verify that your email $git_email matches SSH key."
-		echo
 	fi
 
 # Setup Git
@@ -47,4 +44,5 @@ setup-git:
 	@echo "Setting up Git config..."
 	@echo
 	@just _git-username-email
+	@echo
 	@just _git-ssh-key
