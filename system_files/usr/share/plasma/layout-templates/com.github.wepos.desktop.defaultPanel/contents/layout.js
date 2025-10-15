@@ -23,7 +23,7 @@ if (panel.formFactor === "horizontal") {
 
 panel.addWidget("org.kde.plasma.kickoff")
 //panel.addWidget("org.kde.plasma.showActivityManager")
-panel.addWidget("org.kde.plasma.pager")
+// panel.addWidget("org.kde.plasma.pager")
 panel.addWidget("org.kde.plasma.icontasks")
 panel.addWidget("org.kde.plasma.marginsseparator")
 
