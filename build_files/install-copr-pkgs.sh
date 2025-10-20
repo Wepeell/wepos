@@ -36,3 +36,11 @@ done
 # CoolerControl
 # Enable daemon
 systemctl enable coolercontrold
+
+# Starship
+# Insert into bashrc without expanding $(...)
+cat <<'EOF' >> "/etc/bashrc"
+
+# Enable Starship shell prompt
+eval "$(starship init bash)"
+EOF
