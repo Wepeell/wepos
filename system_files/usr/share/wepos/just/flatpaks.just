@@ -10,9 +10,11 @@ install-flatpaks:
 		com.discordapp.Discord
 		com.github.qarmin.czkawka
 		com.usebottles.bottles
+		info.smplayer.SMPlayer
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
 		org.fooyin.fooyin
+		org.kde.kruler
 		org.keepassxc.KeePassXC
 		org.musicbrainz.Picard
 		org.photoqt.PhotoQt
