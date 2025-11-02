@@ -18,5 +18,11 @@ packages=(
 	plasma-wallpapers-dynamic-builder-5.0.0-7.fc43
 )
 
+# Check if base image packages are being replaced
+if dnf5 install --setopt=tsflags=test -y "${packages[@]}" | grep -E '^(Upgrading|Downgrading):'; then
+	echo "Detected package replacements. Aborting build."
+	exit 1
+fi
+
 # Install Fedora packages from array
 dnf5 -y install "${packages[@]}"
