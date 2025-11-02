@@ -10,8 +10,12 @@ set -ouex pipefail
 # Packages array
 packages=(
 	borgbackup
-	plasma-wallpapers-dynamic
-	plasma-wallpapers-dynamic-builder
+
+	### Pin version 5.0.0-7.fc43
+	# Version 5.0.0-10.fc43 replaces 100 packages for some reason
+	# Unpin when it gets fixed upstream
+	plasma-wallpapers-dynamic-5.0.0-7.fc43
+	plasma-wallpapers-dynamic-builder-5.0.0-7.fc43
 )
 
 # Install Fedora packages from array
