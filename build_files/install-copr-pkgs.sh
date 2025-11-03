@@ -13,10 +13,8 @@ packages=(
 	### CoolerControl
 	coolercontrold
 	coolercontrol
-	# liquidctl
-	python3-liquidctl
+	liquidctl
 	###
-
 	starship
 )
 
