@@ -5,16 +5,20 @@ on:
     branches:
       - main
       - test
+      - build
   # schedule:
   #   - cron: '05 10 * * *'  # 10:05am UTC everyday
   push:
     branches:
       - main
       - test
+      - build
     paths-ignore:
+      - '.github/workflows/build-disk.yml'
+      - 'disk_config/**'
+      - 'repo_files/**'
       - '**/README.md'
       - '**/README_template.md'
-      - 'repo_files/**'
   workflow_dispatch:
 
 env:
