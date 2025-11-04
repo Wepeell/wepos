@@ -82,6 +82,14 @@ jobs:
           # target-dir: /home/runner/.local/share/containers
           mount-opts: compress-force=zstd:2
 
+      # - name: Mount BTRFS for podman storage (Rootful)
+      #   id: container-storage-action-rootful
+      #   uses: ublue-os/container-storage-action@911baca08baf30c8654933e9e9723cb399892140
+      #   continue-on-error: true
+      #   with:
+      #     target-dir: /var/lib/containers
+      #     mount-opts: compress-force=zstd:2
+
       - name: Get current date
         id: date
         run: |
