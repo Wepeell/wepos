@@ -14,9 +14,11 @@ on:
       - test
       - build
     paths-ignore:
+      - '.github/workflows/build-disk.yml'
+      - 'disk_config/**'
+      - 'repo_files/**'
       - '**/README.md'
       - '**/README_template.md'
-      - 'repo_files/**'
   workflow_dispatch:
 
 env:
