@@ -23,6 +23,12 @@ for repo in "${repos[@]}"; do
 	dnf5 -y copr enable "$repo"
 done
 
+# Check if base image packages are being replaced
+if dnf5 install --setopt=tsflags=test -y "${packages[@]}" | grep -E '^(Upgrading|Downgrading):'; then
+	echo "Detected package replacements. Aborting build."
+	exit 1
+fi
+
 # Install COPR packages
 dnf5 -y install "${packages[@]}"
 
