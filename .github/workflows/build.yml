@@ -210,5 +210,6 @@ jobs:
           COSIGN_PRIVATE_KEY: ${{ secrets.SIGNING_SECRET }}
         run: |
           for IMAGE_DIGEST in ${IMAGE_DIGESTS}; do
+            echo "Signing: ${IMAGE_FULL}@${IMAGE_DIGEST}"
             cosign sign -y --key env://COSIGN_PRIVATE_KEY ${IMAGE_FULL}@${IMAGE_DIGEST}
           done
