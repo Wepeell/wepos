@@ -2,15 +2,13 @@
 
 set -ouex pipefail
 
-### Target directories
+# Packages array
+# Target directories as elements
+packages=(
+	/ctx/repo_files/fcp-support/*
+	/ctx/repo_files/scarlett4-firmware/*
+	/ctx/repo_files/alsa-scarlett-gui/*
+)
 
-# Scarlett4 Firmware
-firmware_dir="/ctx/repo_files/scarlett4-firmware"
-
-# ALSA Scarlett Control Panel
-gui_dir="/ctx/repo_files/alsa-scarlett-gui"
-
-# Install packages
-dnf5 -y install \
-	"${firmware_dir}"/* \
-	"${gui_dir}"/*
+# Install Focusrite Scarlett packages from array
+dnf5 -y install "${packages[@]}"
