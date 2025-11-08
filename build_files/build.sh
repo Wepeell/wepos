@@ -44,31 +44,15 @@ function run_script() {
 # Build scripts array
 # Target scripts as elements
 scripts=(
+	/ctx/00-pre.sh
 	/ctx/install-fedora-pkgs.sh
 	/ctx/install-copr-pkgs.sh
 	/ctx/install-focusrite-scarlett.sh
 	/ctx/install-fractalaudio-axefx2.sh
+	/ctx/99-post.sh
 )
-
-# Remove following error when installing packages from repos:
-# gpg: Fatal: can't create directory '/root/.gnupg': No such file or directory
-mkdir -p /var/roothome
-
-# Disable Terra repo
-dnf5 -y config-manager setopt "terra*".enabled=false
 
 # Run each script in array
 for script_element in "${scripts[@]}"; do
 	run_script "$script_element"
 done
-
-# Clean package manager cache
-dnf5 clean all
-
-
-
-# Copy system_files to base image
-cp -r /ctx/system_files/* /
-
-# Remove autostart files
-rm -f /etc/skel/.config/autostart/steam.desktop
