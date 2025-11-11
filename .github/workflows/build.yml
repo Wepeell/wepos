@@ -31,7 +31,7 @@ env:
   DEFAULT_TAG: "branch_${{ github.ref_name }}"  # Set running branch as $DEFAULT_TAG
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}-${{ inputs.brand_name}}-${{ inputs.stream_name }}
+  group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
   cancel-in-progress: true
 
 jobs:
