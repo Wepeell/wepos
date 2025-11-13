@@ -14,6 +14,7 @@ install-flatpaks:
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
 		org.fooyin.fooyin
+		org.kde.kclock
 		org.kde.kruler
 		org.keepassxc.KeePassXC
 		org.musicbrainz.Picard
