@@ -14,8 +14,8 @@ on:
       - test
       - build
     paths-ignore:
-      - '.github/workflows/build-disk.yml'
-      - '.github/workflows/clean-images.yml'
+      - '.github/workflows/**'
+      - '!.github/workflows/build.yml'
       - 'disk_config/**'
       - 'repo_files/**'
       - '**/README.md'
