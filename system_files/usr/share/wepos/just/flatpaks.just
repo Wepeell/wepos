@@ -17,6 +17,7 @@ install-flatpaks:
 		org.kde.kclock
 		org.kde.kruler
 		org.keepassxc.KeePassXC
+		org.libreoffice.LibreOffice
 		org.musicbrainz.Picard
 		org.photoqt.PhotoQt
 		org.qbittorrent.qBittorrent
