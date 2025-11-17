@@ -10,6 +10,8 @@ set -ouex pipefail
 # Packages array
 packages=(
 	borgbackup
+	# Pinned
+	konsole-25.08.2-1.fc43
 	plasma-wallpapers-dynamic
 	plasma-wallpapers-dynamic-builder
 )
