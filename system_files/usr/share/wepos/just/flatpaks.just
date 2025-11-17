@@ -13,6 +13,7 @@ install-flatpaks:
 		info.smplayer.SMPlayer
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
+		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
 		org.kde.kclock
 		org.kde.kruler
