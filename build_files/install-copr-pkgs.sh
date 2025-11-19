@@ -2,13 +2,13 @@
 
 set -ouex pipefail
 
-# Repos array
+### Repos array
 repos=(
 	codifryed/CoolerControl
 	atim/starship
 )
 
-# Packages array
+### Packages array
 packages=(
 	### CoolerControl
 	coolercontrold
@@ -18,30 +18,34 @@ packages=(
 	starship
 )
 
-# Enable COPR repos
+### Enable COPR repos
 for repo in "${repos[@]}"; do
 	dnf5 -y copr enable "$repo"
 done
 
-# Check if base image packages are being replaced
-if dnf5 install --setopt=tsflags=test -y "${packages[@]}" | grep -E '^(Upgrading|Downgrading):'; then
+### Check if base image packages are being replaced
+# Dry run
+dnf5 install --setopt=tsflags=test -y "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
+
+# Check log for upgrading and downgrading
+if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
 	echo "Detected package replacements. Aborting build."
 	exit 1
 fi
 
-# Install COPR packages
+### Install COPR packages
 dnf5 -y install "${packages[@]}"
 
-# Disable COPR repos
+### Disable COPR repos
 for repo in "${repos[@]}"; do
 	dnf5 -y copr disable "$repo"
 done
 
-# CoolerControl
+### CoolerControl
 # Enable daemon
 systemctl enable coolercontrold
 
-# Starship
+### Starship
 # Insert into bashrc without expanding $(...)
 cat <<'EOF' >> "/etc/bashrc"
 

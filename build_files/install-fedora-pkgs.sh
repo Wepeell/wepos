@@ -2,12 +2,12 @@
 
 set -ouex pipefail
 
-# Enable RPM Fusion Repository
+### Enable RPM Fusion Repository
 # dnf5 -y config-manager setopt "rpmfusion-nonfree".enabled=true
 # dnf5 -y config-manager setopt "rpmfusion-free".enabled=true
 # dnf5 -y config-manager setopt "*rpmfusion*".enabled=true
 
-# Packages array
+### Packages array
 packages=(
 	borgbackup
 	# Pinned
@@ -16,11 +16,15 @@ packages=(
 	plasma-wallpapers-dynamic-builder
 )
 
-# Check if base image packages are being replaced
-if dnf5 install --setopt=tsflags=test -y "${packages[@]}" | grep -E '^(Upgrading|Downgrading):'; then
+### Check if base image packages are being replaced
+# Dry run
+dnf5 install --setopt=tsflags=test -y "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
+
+# Check log for upgrading and downgrading
+if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
 	echo "Detected package replacements. Aborting build."
 	exit 1
 fi
 
-# Install Fedora packages from array
+### Install Fedora packages from array
 dnf5 -y install "${packages[@]}"
