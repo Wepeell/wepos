@@ -48,18 +48,26 @@ ACTION=="add", SUBSYSTEM=="usb", ATTR{idVendor}=="2466", ATTR{idProduct}=="0003"
 EOF
 
 ### Important notes
+
+## Axe-Edit for Axe-Fx 2
 # There is a regression in Wine around version 7.2
 # https://bugs.winehq.org/show_bug.cgi?id=56961
+# https://forum.fractalaudio.com/threads/axe-edit-ii-version-3-14-6-on-linux-with-wine-connection-problems.190704/
 
-# When installing Axe-Edit for Axe-Fx 2 use any of these Wine versions/runners:
+# Use any of these Wine versions/runners:
 # lutris-6.21-6
+# kron4ek-wine-6.21-amd64
 # kron4ek-wine-10.18-amd64
 # kron4ek-wine-10.19-amd64
 
+## Fractal-Bot
 # There are regressions in newer versions of Fractal-Bot
 # https://forum.fractalaudio.com/threads/axe-fx-ii-users-on-linux-use-fractal-bot-v3p00p03.203669/
 
-# When installing Fractal-Bot use version:
+# Use this version of Fractal-Bot:
 # Fractal-Bot-Win-v3p00p03.exe
 
-# If using Bottles turn off DXVK and VKD3D to prevent Axe-Edit from crashing
+# Use any of these Wine versions/runners:
+# kron4ek-wine-6.21-amd64
+
+## If using Bottles turn off DXVK and VKD3D to prevent Axe-Edit from crashing
