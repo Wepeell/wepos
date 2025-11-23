@@ -6,6 +6,7 @@ _default:
 
 # Imports
 import "/usr/share/wepos/just/coolercontrol.just"
+import "/usr/share/wepos/just/distrobox.just"
 import "/usr/share/wepos/just/flatpaks.just"
 import "/usr/share/wepos/just/git.just"
 import "/usr/share/wepos/just/homebrew.just"
