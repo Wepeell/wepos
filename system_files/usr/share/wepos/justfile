@@ -1,7 +1,8 @@
 set allow-duplicate-recipes := true
 set ignore-comments := true
 
-_default:
+[private]
+default:
 	@just --list
 
 # Imports

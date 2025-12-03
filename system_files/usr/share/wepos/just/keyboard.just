@@ -1,6 +1,7 @@
 # Install custom keyboard layouts
 [group('Keyboard')]
-_install-keyboard-layouts:
+[private]
+install-keyboard-layouts:
 	#!/usr/bin/env bash
 	set -euo pipefail
 	
@@ -18,7 +19,8 @@ _install-keyboard-layouts:
 
 # Configure keyboard in KDE Plasma System Settings
 [group('Keyboard')]
-_configure-keyboard-settings:
+[private]
+configure-keyboard-settings:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
@@ -62,6 +64,6 @@ _configure-keyboard-settings:
 setup-keyboard:
 	@echo "Setting up custom keyboard layouts and settings..."
 	@echo
-	@just _install-keyboard-layouts
+	@just install-keyboard-layouts
 	@echo
-	@just _configure-keyboard-settings
+	@just configure-keyboard-settings

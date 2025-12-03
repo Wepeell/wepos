@@ -1,6 +1,7 @@
 # Set Git username and email
 [group('Git')]
-_git-username-email:
+[private]
+git-username-email:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
@@ -14,7 +15,8 @@ _git-username-email:
 
 # Generate SSH key
 [group('Git')]
-_git-ssh-key:
+[private]
+git-ssh-key:
 	#!/usr/bin/env bash
 	set -euo pipefail
 
@@ -43,6 +45,6 @@ _git-ssh-key:
 setup-git:
 	@echo "Setting up Git config..."
 	@echo
-	@just _git-username-email
+	@just git-username-email
 	@echo
-	@just _git-ssh-key
+	@just git-ssh-key
