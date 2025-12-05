@@ -8,10 +8,10 @@ default:
 # Imports
 import "/usr/share/wepos/just/coolercontrol.just"
 import "/usr/share/wepos/just/distrobox.just"
-import "/usr/share/wepos/just/emborg.just"
 import "/usr/share/wepos/just/flatpaks.just"
 import "/usr/share/wepos/just/git.just"
 import "/usr/share/wepos/just/homebrew.just"
 import "/usr/share/wepos/just/keyboard.just"
 import "/usr/share/wepos/just/plasma.just"
+import "/usr/share/wepos/just/python.just"
 import "/usr/share/wepos/just/theme.just"

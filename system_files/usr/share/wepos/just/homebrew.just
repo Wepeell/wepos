@@ -26,6 +26,7 @@ install-formulas:
 		# borgbackup
 		clamav
 		# starship
+		uv
 	)
 
 	# Install formulas from array
