@@ -15,6 +15,7 @@ install-flatpaks:
 		it.mijorus.gearlever
 		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
+		org.gimp.GIMP
 		org.kde.kclock
 		org.kde.kruler
 		org.keepassxc.KeePassXC
