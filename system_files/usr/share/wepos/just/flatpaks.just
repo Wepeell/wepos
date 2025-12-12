@@ -12,6 +12,7 @@ install-flatpaks:
 		com.usebottles.bottles
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
+		it.mijorus.gearlever
 		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
 		org.kde.kclock
@@ -32,3 +33,4 @@ install-flatpaks:
 	flatpak install --system -y flathub "${flatpaks[@]}"
 	echo
 	echo "Flatpaks installed."
+
