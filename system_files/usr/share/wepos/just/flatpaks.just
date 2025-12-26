@@ -10,6 +10,7 @@ install-flatpaks:
 		com.discordapp.Discord
 		com.github.qarmin.czkawka
 		com.usebottles.bottles
+		fr.handbrake.ghb
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
 		it.mijorus.gearlever
