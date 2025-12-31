@@ -17,6 +17,7 @@ install-flatpaks:
 		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
 		org.gimp.GIMP
+		org.gimp.GIMP.Plugin.GMic
 		org.kde.kclock
 		org.kde.kruler
 		org.keepassxc.KeePassXC
@@ -35,4 +36,3 @@ install-flatpaks:
 	flatpak install --system -y flathub "${flatpaks[@]}"
 	echo
 	echo "Flatpaks installed."
-
