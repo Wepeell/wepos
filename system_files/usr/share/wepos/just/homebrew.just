@@ -24,7 +24,7 @@ install-formulas:
 	# Formulas array
 	formulas=(
 		# borgbackup
-		clamav
+		# clamav
 		# starship
 		uv
 	)
