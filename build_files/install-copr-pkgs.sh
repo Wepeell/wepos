@@ -49,6 +49,9 @@ systemctl enable coolercontrold
 # Insert into bashrc without expanding $(...)
 cat <<'EOF' >> "/etc/bashrc"
 
-# Enable Starship shell prompt
-eval "$(starship init bash)"
+# Check if Starship is installed
+if command -v starship &>/dev/null; then
+	# Enable Starship shell prompt
+	eval "$(starship init bash)"
+fi
 EOF

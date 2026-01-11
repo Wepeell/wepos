@@ -10,7 +10,7 @@ if [ -n "$BASH" ] && [ -n "$BASH_VERSION" ]; then
 				# Use global config
 				export STARSHIP_CONFIG=/usr/share/starship/starship.toml
 			fi
-		# Enable Starship prompt
+		# Enable Starship shell prompt
 		# Having the init script here does work for the most part,
 		# but the command duration will not work.
 		# Instead, enable it in /etc/bashrc or in $HOME/.bashrc
