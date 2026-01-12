@@ -3,7 +3,10 @@ partial alphanumeric_keys
 xkb_symbols "se-us" {
 	
 	name[Group1]="Swedish (SE-US)";
-	
+
+	// Enable Scroll lock LED indicator
+	modifier_map Mod3 { Scroll_Lock };
+
 	// Converts Right Alt to AltGr
 	include "level3(ralt_switch)"
 	
