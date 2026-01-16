@@ -20,6 +20,7 @@ install-flatpaks:
 		org.gimp.GIMP
 		org.gimp.GIMP.Plugin.GMic
 		org.kde.kclock
+		org.kde.kdenlive
 		org.kde.kruler
 		org.keepassxc.KeePassXC
 		org.libreoffice.LibreOffice
