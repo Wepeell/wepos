@@ -13,6 +13,7 @@ install-flatpaks:
 		fr.handbrake.ghb
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
+		io.github.shonebinu.Brief
 		it.mijorus.gearlever
 		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
