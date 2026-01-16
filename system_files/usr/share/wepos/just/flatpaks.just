@@ -13,12 +13,14 @@ install-flatpaks:
 		fr.handbrake.ghb
 		io.github.mpc_qt.mpc-qt
 		io.github.radiolamp.mangojuice
+		io.github.shonebinu.Brief
 		it.mijorus.gearlever
 		org.fedoraproject.MediaWriter
 		org.fooyin.fooyin
 		org.gimp.GIMP
 		org.gimp.GIMP.Plugin.GMic
 		org.kde.kclock
+		org.kde.kdenlive
 		org.kde.kruler
 		org.keepassxc.KeePassXC
 		org.libreoffice.LibreOffice
