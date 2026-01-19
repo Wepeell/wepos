@@ -8,3 +8,5 @@ mkdir -p /var/roothome
 
 # Disable Terra repo
 dnf5 -y config-manager setopt "terra*".enabled=false
+# This should fix Anaconda ISO building
+sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
