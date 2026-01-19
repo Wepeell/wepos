@@ -27,7 +27,13 @@ env:
   IMAGE_NAME: ${{ github.event.repository.name }} # output of build.yml, keep in sync
   IMAGE_REGISTRY: "ghcr.io/${{ github.repository_owner }}"  # do not edit
   DEFAULT_TAG: "latest"
-  BIB_IMAGE: "ghcr.io/lorbuschris/bootc-image-builder:20250608" # "quay.io/centos-bootc/bootc-image-builder:latest" - see https://github.com/osbuild/bootc-image-builder/pull/954
+  # List of bootc image builders
+  # ghcr.io/osbuild/bootc-image-builder:latest
+  # ghcr.io/centos-workstation/bootc-image-builder:latest - unmaintained?
+  # ghcr.io/lorbuschris/bootc-image-builder:20250608 - deleted
+  # quay.io/centos-bootc/bootc-image-builder
+  # see https://github.com/osbuild/bootc-image-builder/pull/954
+  BIB_IMAGE: "quay.io/centos-bootc/bootc-image-builder:latest"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref || github.run_id }}
@@ -70,9 +76,9 @@ jobs:
 
       - name: Maximize build space
         if: inputs.platform != 'arm64'
-        uses: ublue-os/remove-unwanted-software@cc0becac701cf642c8f0a6613bbdaf5dc36b259e # v9
+        uses: ublue-os/remove-unwanted-software@695eb75bc387dbcd9685a8e72d23439d8686cba6
         with:
-          remove-codeql: true
+          extra-squeeze: false
 
       - name: Checkout
         uses: actions/checkout@8e8c483db84b4bee98b60c0593521ed34d9990e8 # v6
@@ -88,18 +94,18 @@ jobs:
           types: ${{ matrix.disk-type }}
           additional-args: >-
             --use-librepo=True
-            ${{ matrix.disk-type == 'qcow2' && '--rootfs=btrfs' || '' }}
+            --rootfs=btrfs
 
       - name: Upload disk images and Checksum to Job Artifacts
         if: inputs.upload-to-s3 != true && github.event_name != 'pull_request'
         uses: actions/upload-artifact@b7c566a772e6b6bfb58ed0dc250532a479d7789f # v6
         with:
-          name: ${{ matrix.disk-type }}-image
+          name: disk-${{ matrix.disk-type }}-${{ runner.arch }}
           path: ${{ steps.build.outputs.output-directory }}
           if-no-files-found: error
           retention-days: 0
           compression-level: 0
-          overwrite: true
+          overwrite: false
       
       - name: Upload to S3
         if: inputs.upload-to-s3 == true && github.event_name != 'pull_request'
