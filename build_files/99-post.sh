@@ -15,6 +15,3 @@ rm -f /etc/skel/.config/autostart/steam.desktop
 # cat <<'EOF' > "/usr/lib/bootc/kargs.d/99-amd.toml"
 # kargs = ["amdgpu.ppfeaturemask=0xffffffff"]
 # EOF
-
-# Remove stray .git file/dir
-rm -f /.git
