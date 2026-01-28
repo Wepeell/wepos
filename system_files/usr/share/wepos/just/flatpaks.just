@@ -24,6 +24,7 @@ install-flatpaks:
 		org.kde.kruler
 		org.keepassxc.KeePassXC
 		org.libreoffice.LibreOffice
+		org.localsend.localsend_app
 		org.musicbrainz.Picard
 		org.photoqt.PhotoQt
 		org.qbittorrent.qBittorrent
