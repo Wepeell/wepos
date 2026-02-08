@@ -21,7 +21,7 @@ dnf5 install --setopt=tsflags=test -y "${packages[@]}" 2>&1 | tee /tmp/dryrun.lo
 
 # Check log for upgrading and downgrading
 if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
-	echo "Detected package replacements. Aborting build."
+	echo "::notice::Detected package replacements. Aborting build."
 	exit 1
 fi
 
