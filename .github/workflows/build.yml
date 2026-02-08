@@ -81,6 +81,7 @@ jobs:
         with:
           # target-dir: /var/lib/containers
           mount-opts: compress-force=zstd:2
+          # loopback-free: 1.0
 
       - name: Show disk space
         run: |
