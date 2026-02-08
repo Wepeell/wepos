@@ -88,6 +88,11 @@ jobs:
           target-dir: /var/lib/containers
           mount-opts: compress-force=zstd:2
 
+      - name: Show disk space
+        run: |
+          echo "Available space"
+          df -h
+
       - name: Checkout
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
