@@ -82,6 +82,11 @@ jobs:
           # target-dir: /var/lib/containers
           mount-opts: compress-force=zstd:2
 
+      - name: Show disk space
+        run: |
+          echo "Available space"
+          df -h
+
       - name: Get current date
         id: date
         run: |
