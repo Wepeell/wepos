@@ -40,6 +40,18 @@ git-ssh-key:
 		echo "Manually verify that your email $git_email matches SSH key."
 	fi
 
+# Sign all commits by default
+[group('Git')]
+[private]
+git-sign-commits:
+	#!/usr/bin/env bash
+	set -euo pipefail
+
+	# Use SSH key for signing
+	git config --global gpg.format ssh
+	git config --global user.signingkey ~/.ssh/id_ed25519.pub
+	git config --global commit.gpgsign true
+
 # Setup Git
 [group('Git')]
 setup-git:
@@ -48,3 +60,5 @@ setup-git:
 	@just git-username-email
 	@echo
 	@just git-ssh-key
+	@echo
+	@just git-sign-commits
