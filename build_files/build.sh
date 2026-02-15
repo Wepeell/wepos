@@ -49,6 +49,7 @@ scripts=(
 	/ctx/install-copr-pkgs.sh
 	/ctx/install-focusrite-scarlett.sh
 	/ctx/install-fractalaudio-axefx2.sh
+	/ctx/install-mullvad-vpn.sh
 	/ctx/99-post.sh
 )
 
