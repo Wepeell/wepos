@@ -8,7 +8,7 @@ mkdir -p /var/roothome
 
 # Allow packages to install files into /opt
 # These files needs to be copied into an immutable part of the image
-# mkdir -p /var/opt
+mkdir -p /var/opt
 
 # Disable Terra repo
 dnf5 -y config-manager setopt "terra*".enabled=false
