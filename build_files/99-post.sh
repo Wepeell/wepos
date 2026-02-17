@@ -12,7 +12,6 @@ cp -r /ctx/system_files/* /
 rm -f /etc/skel/.config/autostart/steam.desktop
 
 # Enable Mullvad VPN repo for local layering
-# rpm-ostree install mullvad-vpn
 dnf5 -y config-manager addrepo --from-repofile="https://repository.mullvad.net/rpm/stable/mullvad.repo"
 
 ### Add kargs
