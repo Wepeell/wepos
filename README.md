@@ -13,6 +13,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
 - USB firmware for Fractal Audio Axe-Fx 2
+- [Mullvad VPN](https://github.com/mullvad/mullvadvpn-app)
 
 ## Custom wjust commands
 
