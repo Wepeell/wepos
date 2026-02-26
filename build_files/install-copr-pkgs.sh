@@ -6,6 +6,7 @@ set -ouex pipefail
 repos=(
 	codifryed/CoolerControl
 	atim/starship
+	faugus/faugus-launcher
 )
 
 ### Packages array
@@ -16,6 +17,7 @@ packages=(
 	liquidctl
 	###
 	starship
+	faugus-launcher
 )
 
 ### Enable COPR repos
