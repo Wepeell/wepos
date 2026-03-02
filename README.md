@@ -5,7 +5,6 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ## Things added
 
 - [Borg Backup](https://github.com/borgbackup/borg)
-- [Konsole](https://invent.kde.org/utilities/konsole)
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Starship](https://github.com/starship/starship)
