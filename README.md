@@ -14,6 +14,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - USB firmware for Fractal Audio Axe-Fx 2
 - [Mullvad VPN](https://github.com/mullvad/mullvadvpn-app)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
+- [Podman Compose](https://github.com/containers/podman-compose)
 
 ## Custom wjust commands
 
