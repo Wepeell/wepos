@@ -12,6 +12,7 @@ packages=(
 	borgbackup
 	plasma-wallpapers-dynamic
 	plasma-wallpapers-dynamic-builder
+	podman-compose
 )
 
 ### Check if base image packages are being replaced
