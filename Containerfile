@@ -7,7 +7,7 @@ COPY system_files /system_files
 COPY repo_files /repo_files
 
 # Base Image
-FROM ghcr.io/ublue-os/bazzite:stable@sha256:2b2249aa4de1cedb01f21cf8ec5442c9a7192205e3c0f2bafc5aef1b3fdf9422
+FROM ghcr.io/ublue-os/bazzite:stable@sha256:4605ae841f64fe792d9d8da0d8b7f78018e8d11142cc0c25e40f955752e13304
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:latest
