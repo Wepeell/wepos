@@ -50,7 +50,6 @@ scripts=(
 	/ctx/install-focusrite-scarlett.sh
 	/ctx/install-fractalaudio-axefx2.sh
 	/ctx/install-mullvad-vpn.sh
-	/ctx/install-vscode.sh
 	/ctx/98-optfix.sh
 	/ctx/99-post.sh
 )
