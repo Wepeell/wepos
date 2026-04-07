@@ -14,3 +14,23 @@ mkdir -p /var/opt
 dnf5 -y config-manager setopt "terra*".enabled=false
 # This should fix Anaconda ISO building
 sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
+
+### Version lock packages
+# Packages array
+packages_lock=(
+	konsole-part
+)
+
+# Loop array
+for pkg in "${packages_lock[@]}"; do
+	# Check if package is insalled
+	if ! rpm -q --quiet "$pkg"; then
+		echo "Skipping $pkg (not installed)"
+		continue
+	fi
+
+	# Version lock the package
+	while IFS= read -r nevra; do
+		dnf5 versionlock add "$nevra"
+	done < <(rpm -q "$pkg")
+done
