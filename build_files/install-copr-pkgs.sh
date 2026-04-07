@@ -20,7 +20,7 @@ packages=(
 	faugus-launcher
 )
 
-### Enable COPR repos
+### Enable repos
 for repo in "${repos[@]}"; do
 	dnf5 -y copr enable "$repo"
 done
@@ -35,10 +35,10 @@ if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
 	exit 1
 fi
 
-### Install COPR packages
+### Install packages
 dnf5 -y install "${packages[@]}"
 
-### Disable COPR repos
+### Disable repos
 for repo in "${repos[@]}"; do
 	dnf5 -y copr disable "$repo"
 done
