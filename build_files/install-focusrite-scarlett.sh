@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-# Packages array
+### Packages array
 # Target directories as elements
 packages=(
 	/ctx/repo_files/fcp-support/*
@@ -10,5 +10,5 @@ packages=(
 	/ctx/repo_files/alsa-scarlett-gui/*
 )
 
-# Install Focusrite Scarlett packages from array
+### Install packages
 dnf5 -y install "${packages[@]}"
