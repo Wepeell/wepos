@@ -9,7 +9,7 @@ applet.writeConfig("interactiveMute", "false")
 
 // Set default pinned apps
 applet.writeConfig("launchers", [
-    "applications:org.gnome.Ptyxis.desktop",
+    "applications:org.kde.konsole.desktop",
     "applications:org.kde.dolphin.desktop",
     "applications:org.keepassxc.KeePassXC.desktop",
     "applications:org.fooyin.fooyin.desktop",
