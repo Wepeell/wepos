@@ -8,6 +8,7 @@ CursorShape=1
 LocalTabTitleFormat=%u@%h: %D
 Name=WepOS
 Parent=FALLBACK/
+TerminalMargin=4
 
 [Terminal Features]
 BlinkingCursorEnabled=true
