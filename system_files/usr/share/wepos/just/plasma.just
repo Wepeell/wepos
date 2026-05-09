@@ -1,64 +1,64 @@
 # Restart KDE Plasma
 [group('KDE Plasma')]
 restart-plasma:
-	#!/usr/bin/env bash
-	set -euo pipefail
+    #!/usr/bin/env bash
+    set -euo pipefail
 
-	# Restart systemd Plasma service
-	echo "Restarting plasmashell..."
-	systemctl --user restart plasma-plasmashell
+    # Restart systemd Plasma service
+    echo "Restarting plasmashell..."
+    systemctl --user restart plasma-plasmashell
 
 # Configure delay on hover preview and tooltip
 [group('KDE Plasma')]
 delay-plasma:
-	#!/usr/bin/env bash
-	set -euo pipefail
+    #!/usr/bin/env bash
+    set -euo pipefail
 
-	# Delay in milliseconds
-	delay="400"
+    # Delay in milliseconds
+    delay="400"
 
-	# Set delay
-	echo "Setting preview hover delay to ${delay} ms..."
-	kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "$delay"
-	echo "Restart plasmashell for change to take effect."
+    # Set delay
+    echo "Setting preview hover delay to ${delay} ms..."
+    kwriteconfig6 --file "plasmarc" --group "PlasmaToolTips" --key "Delay" "$delay"
+    echo "Restart plasmashell for change to take effect."
 
 # Configure Region & Language
 [group('KDE Plasma')]
 setup-locale:
-	#!/usr/bin/env bash
-	set -euo pipefail
+    #!/usr/bin/env bash
+    set -euo pipefail
 
-	echo "Configuring Region & Language in KDE Plasma System Settings..."
+    echo "Configuring Region & Language in KDE Plasma System Settings..."
 
-	## Language
-	# kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LANG" "en_US.utf8"
-	# kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LANG" --delete
+    ## Language
+    # kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LANG" "en_US.utf8"
+    # kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LANG" --delete
 
-	## Numbers
-	# Leave as default
+    ## Numbers
+    # Leave as default
 
-	## Time
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_TIME" "en_SE.UTF-8"
+    ## Time
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_TIME" "en_SE.UTF-8"
 
-	## Currency
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_MONETARY" "en_SE.UTF-8"
+    ## Currency
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_MONETARY" "en_SE.UTF-8"
 
-	## Measurements
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_MEASUREMENT" "en_SE.UTF-8"
+    ## Measurements
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_MEASUREMENT" "en_SE.UTF-8"
 
-	## Paper Size
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_PAPER" "en_SE.UTF-8"
+    ## Paper Size
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_PAPER" "en_SE.UTF-8"
 
-	## Address
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_ADDRESS" "sv_SE.UTF-8"
+    ## Address
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_ADDRESS" "sv_SE.UTF-8"
 
-	## Name Style
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_NAME" "sv_SE.UTF-8"
+    ## Name Style
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_NAME" "sv_SE.UTF-8"
 
-	## Phone Numbers
-	kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_TELEPHONE" "sv_SE.UTF-8"
+    ## Phone Numbers
+    kwriteconfig6 --file "plasma-localerc" --group "Formats" --key "LC_TELEPHONE" "sv_SE.UTF-8"
 
-	## Data and Storage Sizes
-	# Leave as default
+    ## Data and Storage Sizes
+    # Leave as default
 
-	echo "Done."
+    echo "Done."
