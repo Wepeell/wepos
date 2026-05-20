@@ -19,6 +19,8 @@ sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
 # Packages array
 packages_lock=(
 	konsole-part
+	qt6-qtbase
+	qt6-qtdeclarative
 )
 
 # Loop array
