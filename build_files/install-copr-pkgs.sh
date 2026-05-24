@@ -12,8 +12,8 @@ repos=(
 ### Packages array
 packages=(
 	### CoolerControl
-	coolercontrold
-	coolercontrol
+	coolercontrold-4.3.0-1.fc44
+	coolercontrol-4.3.0-1.fc44
 	liquidctl
 	###
 	starship
