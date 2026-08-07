@@ -49,7 +49,7 @@ systemctl enable coolercontrold
 
 ### Starship
 # Insert into bashrc without expanding $(...)
-cat <<'EOF' >> "/etc/bashrc"
+tee -a "/etc/bashrc" <<'EOF'
 
 # Check if Starship is installed
 if command -v starship &>/dev/null; then

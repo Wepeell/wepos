@@ -40,7 +40,7 @@ chmod 644 "${firmware_target}/${firmware_bin}"
 mkdir -p "$udev_dir"
 
 # Create udev rules file
-cat <<EOF > "${udev_dir}/${udev_file}"
+tee "${udev_dir}/${udev_file}" <<EOF
 ### fractalaudio.rules - udev rules for uploading USB firmware to Fractal Audio Systems devices
 
 # Fractal Audio Systems Axe-FX II
