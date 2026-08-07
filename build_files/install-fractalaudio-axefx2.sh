@@ -17,7 +17,7 @@ fxload_path="/usr/bin/fxload"
 
 ### Install required packages
 # dnf5 -y install \
-#	fxload
+#   fxload
 
 ### Install USB firmware binary
 
@@ -26,7 +26,7 @@ mkdir -p "$firmware_target"
 
 # Set permissions for both "FractalAudio" and "axefx2" directories
 chmod 755 "$firmware_target" \
-	"${firmware_target%/*}"
+    "${firmware_target%/*}"
 
 # Copy binary
 cp "${firmware_source}/${firmware_bin}" "${firmware_target}/${firmware_bin}"
