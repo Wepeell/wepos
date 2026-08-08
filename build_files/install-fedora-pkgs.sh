@@ -15,6 +15,7 @@ packages=(
     podman-compose
     noctalia
     niri
+    playerctl
 )
 
 ### Check if base image packages are being replaced
