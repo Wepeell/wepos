@@ -13,6 +13,9 @@ packages=(
     plasma-wallpapers-dynamic
     plasma-wallpapers-dynamic-builder
     podman-compose
+    noctalia
+    niri
+    playerctl
 )
 
 ### Check if base image packages are being replaced
