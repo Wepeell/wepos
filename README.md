@@ -9,7 +9,6 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [Podman Compose](https://github.com/containers/podman-compose)
 - [Noctalia](https://github.com/noctalia-dev/noctalia)
 - [Niri](https://github.com/niri-wm/niri)
-- [Playerctl](https://github.com/altdesktop/playerctl)
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Starship](https://github.com/starship/starship)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
