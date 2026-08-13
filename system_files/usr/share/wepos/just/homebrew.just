@@ -23,10 +23,10 @@ install-formulas:
 
     # Formulas array
     formulas=(
-    	# borgbackup
-    	# clamav
-    	# starship
-    	uv
+        # borgbackup
+        # clamav
+        # starship
+        uv
     )
 
     # Install formulas from array
@@ -47,10 +47,10 @@ install-casks:
 
     # Casks array
     casks=(
-    	font-dejavu-sans-mono-nerd-font
-    	font-fira-code-nerd-font
-    	# font-noto-nerd-font
-    	# font-symbols-only-nerd-font
+        font-dejavu-sans-mono-nerd-font
+        font-fira-code-nerd-font
+        # font-noto-nerd-font
+        # font-symbols-only-nerd-font
     )
 
     # Install casks from array

@@ -3,7 +3,7 @@ set ignore-comments := true
 
 [private]
 default:
-	@just --list
+    @just --list
 
 # Imports
 import "/usr/share/wepos/just/coolercontrol.just"

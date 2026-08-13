@@ -25,19 +25,19 @@ git-ssh-key:
 
     # Check for existing SSH key
     if [ ! -f "${HOME}/.ssh/id_ed25519.pub" ]; then
-    	# Generate SSH key
-    	echo "SSH key not found."
-    	echo "Generating SSH key..."
-    	echo
-    	ssh-keygen -t ed25519 -C "$git_email"
-    	echo
+        # Generate SSH key
+        echo "SSH key not found."
+        echo "Generating SSH key..."
+        echo
+        ssh-keygen -t ed25519 -C "$git_email"
+        echo
 
-    	# Display the public key
-    	echo "Your SSH public key:"
-    	cat "${HOME}/.ssh/id_ed25519.pub"
+        # Display the public key
+        echo "Your SSH public key:"
+        cat "${HOME}/.ssh/id_ed25519.pub"
     else
-    	echo "Using existing SSH key ~/.ssh/id_ed25519.pub."
-    	echo "Manually verify that your email $git_email matches SSH key."
+        echo "Using existing SSH key ~/.ssh/id_ed25519.pub."
+        echo "Manually verify that your email $git_email matches SSH key."
     fi
 
 # Sign all commits by default

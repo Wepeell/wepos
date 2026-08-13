@@ -19,10 +19,10 @@ distrobox-create container_name:
 
     # Create distrobox
     distrobox create \
-    	--image "$container_image" \
-    	--name "$container_name" \
-    	--home "$container_home" \
-    	--no-entry
+        --image "$container_image" \
+        --name "$container_name" \
+        --home "$container_home" \
+        --no-entry
 
 # Clone a Distrobox container, requires one argument for which container to clone
 [group('Distrobox')]
@@ -37,10 +37,10 @@ distrobox-clone container_name:
 
     # Create distrobox
     distrobox create \
-    	--clone "$container_name" \
-    	--name "$clone_name" \
-    	--home "$clone_home" \
-    	--no-entry
+        --clone "$container_name" \
+        --name "$clone_name" \
+        --home "$clone_home" \
+        --no-entry
 
 # Delete a Distrobox container, requires one argument for which container to delete
 [group('Distrobox')]

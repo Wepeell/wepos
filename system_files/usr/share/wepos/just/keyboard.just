@@ -12,9 +12,9 @@ install-keyboard-layouts:
     # Copy keyboard layout files into user $HOME
     echo "Copying keyboard layout files into ${target}/xkb ..."
     if cp -r "$source" "$target"; then
-    	echo "Copying succesful!"
+        echo "Copying succesful!"
     else
-    	echo "Copying failed!"
+        echo "Copying failed!"
     fi
 
 # Configure keyboard in KDE Plasma System Settings

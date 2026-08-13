@@ -6,8 +6,8 @@ install-emborg:
 
     # Check if uv is installed
     if ! command -v uv >/dev/null 2>&1; then
-    	echo "Error: 'uv' is not installed or not in PATH."
-    	exit 1
+        echo "Error: 'uv' is not installed or not in PATH."
+        exit 1
     fi
 
     # Install Emborg through uv
