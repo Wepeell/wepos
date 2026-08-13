@@ -7,6 +7,8 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [Borg Backup](https://github.com/borgbackup/borg)
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
 - [Podman Compose](https://github.com/containers/podman-compose)
+- [Noctalia](https://github.com/noctalia-dev/noctalia)
+- [Niri](https://github.com/niri-wm/niri)
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Starship](https://github.com/starship/starship)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
