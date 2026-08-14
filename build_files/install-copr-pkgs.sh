@@ -7,6 +7,7 @@ repos=(
     codifryed/CoolerControl
     atim/starship
     faugus/faugus-launcher
+    errornointernet/klassy
 )
 
 ### Packages array
@@ -18,6 +19,7 @@ packages=(
     ###
     starship
     faugus-launcher
+    klassy
 )
 
 ### Enable repos
