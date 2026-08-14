@@ -10,6 +10,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Starship](https://github.com/starship/starship)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
+- [Klassy](https://github.com/paulmcauley/klassy)
 - [Linux FCP Support Tools](https://github.com/geoffreybennett/fcp-support)
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
