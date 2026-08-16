@@ -6,7 +6,7 @@ set -ouex pipefail
 dnf5 clean all
 
 # Copy the contents of system_files/ of the git repo to /
-cp -v "/ctx/system_files"/. /
+cp -rv "/ctx/system_files"/. /
 
 # Remove autostart files
 rm -f /etc/skel/.config/autostart/steam.desktop
