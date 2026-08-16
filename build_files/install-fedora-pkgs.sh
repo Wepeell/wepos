@@ -2,7 +2,7 @@
 
 set -ouex pipefail
 
-### Packages array
+# Packages to install
 packages=(
     borgbackup
     plasma-wallpapers-dynamic
@@ -10,9 +10,8 @@ packages=(
     podman-compose
 )
 
-### Check if base image packages are being replaced
-# Dry run
-dnf5 -y install --setopt=tsflags=test "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
+# Check if base image packages are being replaced with a dry run
+dnf5 --setopt=tsflags=test -y install "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
 
 # Check log for upgrading and downgrading
 if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
@@ -20,5 +19,5 @@ if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
     exit 1
 fi
 
-### Install packages
+# Install packages
 dnf5 -y install "${packages[@]}"
