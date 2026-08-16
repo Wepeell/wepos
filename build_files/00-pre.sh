@@ -17,7 +17,6 @@ sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
 
 # Version lock packages
 packages_lock=(
-    konsole-part
     qt6-qtbase
     qt6-qtdeclarative
 )
