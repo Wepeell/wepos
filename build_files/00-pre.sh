@@ -15,8 +15,7 @@ dnf5 -y config-manager setopt "terra*".enabled=false
 # This should fix Anaconda ISO building
 sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
 
-### Version lock packages
-# Packages array
+# Version lock packages
 packages_lock=(
     konsole-part
     qt6-qtbase

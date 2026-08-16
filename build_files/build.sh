@@ -19,7 +19,6 @@ function run_script() {
 }
 
 # Build scripts array
-# Target scripts as elements
 scripts=(
     /ctx/00-pre.sh
     /ctx/install-fedora-pkgs.sh
