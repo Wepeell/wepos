@@ -42,11 +42,11 @@ for repo in "${repos[@]}"; do
     dnf5 -y copr disable "$repo"
 done
 
-# CoolerControl
+### CoolerControl
 # Enable daemon
 systemctl enable coolercontrold
 
-# Starship
+### Starship
 # Insert into bashrc without expanding $(...)
 tee -a "/etc/bashrc" <<'EOF'
 
