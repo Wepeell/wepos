@@ -15,11 +15,6 @@ dnf5 -y config-manager setopt "terra*".enabled=false
 # This should fix Anaconda ISO building
 sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/terra-mesa.repo
 
-### Enable RPM Fusion Repository
-# dnf5 -y config-manager setopt "rpmfusion-nonfree".enabled=true
-# dnf5 -y config-manager setopt "rpmfusion-free".enabled=true
-# dnf5 -y config-manager setopt "*rpmfusion*".enabled=true
-
 # Packages to version lock
 packages=(
     qt6-qtbase
