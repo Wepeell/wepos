@@ -6,23 +6,22 @@ set -ouex pipefail
 # https://mullvad.net/en/download/vpn/linux
 # https://mullvad.net/en/help/install-mullvad-app-linux
 
-### Repofile
+# Repofile
 repofile="https://repository.mullvad.net/rpm/stable/mullvad.repo"
 
-### Repo ID
+# Repo ID
 repo_id="mullvad"
 
-### Packages array
+# Packages to install
 packages=(
     mullvad-vpn
 )
 
-### Enable repo
+# Enable repo
 dnf5 -y config-manager addrepo --from-repofile="$repofile"
 
-### Check if base image packages are being replaced
-# Dry run
-dnf5 -y install --setopt=tsflags=test "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
+# Check if base image packages are being replaced with a dry run
+dnf5 --setopt=tsflags=test -y install "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
 
 # Check log for upgrading and downgrading
 if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
@@ -30,12 +29,12 @@ if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
     exit 1
 fi
 
-### Install packages
+# Install packages
 dnf5 -y install "${packages[@]}"
 
-### Disable repo
+# Disable repo
 dnf5 -y config-manager setopt "*${repo_id}*".enabled=false
 
-### Enable daemon
+# Enable daemon
 systemctl enable mullvad-daemon
 # systemctl enable mullvad-early-boot-blocking

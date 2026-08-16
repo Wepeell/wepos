@@ -2,34 +2,31 @@
 
 set -ouex pipefail
 
-### Repos array
+# Repos to enable
 repos=(
-    codifryed/CoolerControl
     atim/starship
-    faugus/faugus-launcher
+    codifryed/CoolerControl
     errornointernet/klassy
+    faugus/faugus-launcher
 )
 
-### Packages array
+# Packages to install
 packages=(
-    ### CoolerControl
-    coolercontrold
     coolercontrol
-    liquidctl
-    ###
-    starship
+    coolercontrold
+    liquidctl # CoolerControl dependency
     faugus-launcher
     klassy
+    starship
 )
 
-### Enable repos
+# Enable repos
 for repo in "${repos[@]}"; do
     dnf5 -y copr enable "$repo"
 done
 
-### Check if base image packages are being replaced
-# Dry run
-dnf5 -y install --setopt=tsflags=test "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
+# Check if base image packages are being replaced with a dry run
+dnf5 --setopt=tsflags=test -y install "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
 
 # Check log for upgrading and downgrading
 if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
@@ -37,10 +34,10 @@ if grep -qE '^(Upgrading|Downgrading):' /tmp/dryrun.log; then
     exit 1
 fi
 
-### Install packages
+# Install packages
 dnf5 -y install "${packages[@]}"
 
-### Disable repos
+# Disable repos
 for repo in "${repos[@]}"; do
     dnf5 -y copr disable "$repo"
 done
