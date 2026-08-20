@@ -23,6 +23,7 @@ scripts=(
     /ctx/00-pre.sh
     /ctx/install-fedora-pkgs.sh
     /ctx/install-copr-pkgs.sh
+    /ctx/install-terra-pkgs.sh
     /ctx/install-focusrite-scarlett.sh
     /ctx/install-fractalaudio-axefx2.sh
     /ctx/install-mullvad-vpn.sh

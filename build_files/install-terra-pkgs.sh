@@ -4,7 +4,7 @@ set -ouex pipefail
 
 # Packages to install
 packages=(
-    starship
+    klassy
 )
 
 # Enable repos
