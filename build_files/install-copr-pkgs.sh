@@ -6,7 +6,6 @@ set -ouex pipefail
 repos=(
     atim/starship
     codifryed/CoolerControl
-    errornointernet/klassy
     faugus/faugus-launcher
 )
 
@@ -16,7 +15,6 @@ packages=(
     coolercontrold
     liquidctl # CoolerControl dependency
     faugus-launcher
-    klassy
     starship
 )
 
