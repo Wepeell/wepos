@@ -5,6 +5,7 @@ set -ouex pipefail
 # Packages to install
 packages=(
     borgbackup
+    noctalia
     plasma-wallpapers-dynamic
     plasma-wallpapers-dynamic-builder
     podman-compose
