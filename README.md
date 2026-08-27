@@ -6,8 +6,12 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 
 ### Fedora Repo
 - [Borg Backup](https://github.com/borgbackup/borg)
+- [Niri](https://github.com/niri-wm/niri)
+- [Noctalia](https://github.com/noctalia-dev/noctalia)
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
+- [Playerctl](https://github.com/altdesktop/playerctl)
 - [Podman Compose](https://github.com/containers/podman-compose)
+- [xdg-desktop-portal-gnome](https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome)
 
 ### Fedora Copr
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
