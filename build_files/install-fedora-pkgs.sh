@@ -11,6 +11,7 @@ packages=(
     plasma-wallpapers-dynamic-builder
     playerctl
     podman-compose
+    xdg-desktop-portal-gnome
 )
 
 # Check if base image packages are being replaced with a dry run
