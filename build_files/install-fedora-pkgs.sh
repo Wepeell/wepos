@@ -8,6 +8,7 @@ packages=(
     noctalia
     plasma-wallpapers-dynamic
     plasma-wallpapers-dynamic-builder
+    playerctl
     podman-compose
 )
 
