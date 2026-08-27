@@ -4,13 +4,20 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 
 ## Things added
 
+### Fedora Repo
 - [Borg Backup](https://github.com/borgbackup/borg)
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
 - [Podman Compose](https://github.com/containers/podman-compose)
+
+### Fedora Copr
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
-- [Starship](https://github.com/starship/starship)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
+- [Starship](https://github.com/starship/starship)
+
+### Terra Repo
 - [Klassy](https://github.com/paulmcauley/klassy)
+
+### Other
 - [Linux FCP Support Tools](https://github.com/geoffreybennett/fcp-support)
 - [Scarlett4 Firmware](https://github.com/geoffreybennett/scarlett4-firmware)
 - [ALSA Scarlett Control Panel](https://github.com/geoffreybennett/alsa-scarlett-gui)
