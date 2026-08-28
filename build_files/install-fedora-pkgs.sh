@@ -5,13 +5,9 @@ set -ouex pipefail
 # Packages to install
 packages=(
     borgbackup
-    niri
-    noctalia
     plasma-wallpapers-dynamic
     plasma-wallpapers-dynamic-builder
-    playerctl
     podman-compose
-    xdg-desktop-portal-gnome
 )
 
 # Check if base image packages are being replaced with a dry run
