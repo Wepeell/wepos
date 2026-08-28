@@ -6,6 +6,7 @@ set -ouex pipefail
 repos=(
     atim/starship
     codifryed/CoolerControl
+    errornointernet/packages
     faugus/faugus-launcher
 )
 
@@ -16,6 +17,7 @@ packages=(
     liquidctl # CoolerControl dependency
     faugus-launcher
     starship
+    wl-screenrec
 )
 
 # Enable repos
