@@ -11,6 +11,7 @@ packages=(
     plasma-wallpapers-dynamic-builder
     playerctl
     podman-compose
+    slurp
     xdg-desktop-portal-gnome
 )
 
