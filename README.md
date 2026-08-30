@@ -11,12 +11,14 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
 - [Playerctl](https://github.com/altdesktop/playerctl)
 - [Podman Compose](https://github.com/containers/podman-compose)
+- [slurp](https://github.com/emersion/slurp)
 - [xdg-desktop-portal-gnome](https://gitlab.gnome.org/GNOME/xdg-desktop-portal-gnome)
 
 ### Fedora Copr
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
 - [Starship](https://github.com/starship/starship)
+- [wl-screenrec](https://github.com/rosalyntg/wl-screenrec)
 
 ### Terra Repo
 - [Klassy](https://github.com/paulmcauley/klassy)
