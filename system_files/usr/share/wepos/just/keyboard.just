@@ -6,7 +6,7 @@ install-keyboard-layouts:
     set -euo pipefail
 
     # Variables
-    source="/usr/share/wepos/keyboard-layouts/xkb"
+    source="/usr/share/wepos/xkb"
     target="${HOME}/.config"
 
     # Copy keyboard layout files into user $HOME
@@ -50,8 +50,8 @@ configure-keyboard-settings:
     ## Shortcuts
     # Change layout
     # Default shortcut is "Meta+Alt+K"
-    # Set to Alt+Shift
-    kwriteconfig6 --file "kglobalshortcutsrc" --group "KDE Keyboard Layout Switcher" --key "Switch to Next Keyboard Layout" "Alt+Shift,Meta+Alt+K,Switch to Next Keyboard Layout"
+    # Set to Alt+Space
+    kwriteconfig6 --file "kglobalshortcutsrc" --group "KDE Keyboard Layout Switcher" --key "Switch to Next Keyboard Layout" "Alt+Space,Meta+Alt+K,Switch to Next Keyboard Layout"
     # Switch to last used layout
     # Default shortcut is "Meta+Alt+L"
     # Set to none
