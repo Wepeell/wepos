@@ -6,7 +6,7 @@ install-keyboard-layouts:
     set -euo pipefail
 
     # Variables
-    source="/usr/share/wepos/keyboard-layouts/xkb"
+    source="/usr/share/wepos/xkb"
     target="${HOME}/.config"
 
     # Copy keyboard layout files into user $HOME
