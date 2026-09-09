@@ -13,6 +13,7 @@ packages=(
     podman-compose
     slurp
     xdg-desktop-portal-gnome
+    xwayland-satellite-0.8.1
 )
 
 # Check if base image packages are being replaced with a dry run
