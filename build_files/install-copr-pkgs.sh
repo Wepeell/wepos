@@ -8,14 +8,16 @@ repos=(
     codifryed/CoolerControl
     errornointernet/packages
     faugus/faugus-launcher
+    yalter/niri-git
 )
 
 # Packages to install
 packages=(
     coolercontrol
     coolercontrold
-    liquidctl # CoolerControl dependency
     faugus-launcher
+    liquidctl # CoolerControl dependency
+    niri
     starship
     wl-screenrec
 )
@@ -24,6 +26,8 @@ packages=(
 for repo in "${repos[@]}"; do
     dnf5 -y copr enable "$repo"
 done
+
+echo "priority=1" | tee -a /etc/yum.repos.d/_copr:copr.fedorainfracloud.org:yalter:niri-git.repo
 
 # Check if base image packages are being replaced with a dry run
 dnf5 --setopt=tsflags=test -y install "${packages[@]}" 2>&1 | tee /tmp/dryrun.log
