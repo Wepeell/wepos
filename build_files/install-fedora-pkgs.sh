@@ -5,6 +5,7 @@ set -ouex pipefail
 # Packages to install
 packages=(
     borgbackup
+    micro
     niri
     noctalia
     plasma-wallpapers-dynamic
@@ -26,3 +27,11 @@ fi
 
 # Install packages
 dnf5 -y install "${packages[@]}"
+
+# Replace VIM with Micro as text default editor
+sed -i 's/^EDITOR=/# EDITOR=/' /etc/environment
+tee -a "/etc/environment" <<'EOF'
+
+# Use Micro as default text editor
+EDITOR=/usr/bin/micro
+EOF
