@@ -16,6 +16,9 @@ tee -a "/etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop" <<'EOF'
 Hidden=true
 EOF
 
+# Do not use vim
+sed -i 's/^EDITOR=/# EDITOR=/' /etc/environment
+
 # Clean up directories to make linter stop complaining
 rm -rf /run/dnf
 rm -rf /run/fcp-server
