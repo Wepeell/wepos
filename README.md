@@ -17,11 +17,11 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 ### Fedora Copr
 - [CoolerControl](https://gitlab.com/coolercontrol/coolercontrol)
 - [Faugus Launcher](https://github.com/Faugus/faugus-launcher)
-- [Starship](https://github.com/starship/starship)
 - [wl-screenrec](https://github.com/rosalyntg/wl-screenrec)
 
 ### Terra Repo
 - [Klassy](https://github.com/paulmcauley/klassy)
+- [Starship](https://github.com/starship/starship)
 
 ### Other
 - [Linux FCP Support Tools](https://github.com/geoffreybennett/fcp-support)

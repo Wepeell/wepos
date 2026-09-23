@@ -5,6 +5,7 @@ set -ouex pipefail
 # Packages to install
 packages=(
     klassy
+    starship
 )
 
 # Enable repos
@@ -25,3 +26,14 @@ dnf5 -y install "${packages[@]}"
 
 # Disable repos
 dnf5 -y config-manager setopt "terra*".enabled=false
+
+### Starship
+# Insert into bashrc without expanding $(...)
+tee -a "/etc/bashrc" <<'EOF'
+
+# Check if Starship is installed
+if command -v starship &>/dev/null; then
+    # Enable Starship shell prompt
+    eval "$(starship init bash)"
+fi
+EOF

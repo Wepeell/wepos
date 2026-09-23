@@ -4,7 +4,6 @@ set -ouex pipefail
 
 # Repos to enable
 repos=(
-    atim/starship
     codifryed/CoolerControl
     errornointernet/packages
     faugus/faugus-launcher
@@ -16,7 +15,6 @@ packages=(
     coolercontrold
     liquidctl # CoolerControl dependency
     faugus-launcher
-    starship
     wl-screenrec
 )
 
@@ -45,14 +43,3 @@ done
 ### CoolerControl
 # Enable daemon
 systemctl enable coolercontrold
-
-### Starship
-# Insert into bashrc without expanding $(...)
-tee -a "/etc/bashrc" <<'EOF'
-
-# Check if Starship is installed
-if command -v starship &>/dev/null; then
-    # Enable Starship shell prompt
-    eval "$(starship init bash)"
-fi
-EOF
