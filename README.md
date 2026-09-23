@@ -6,6 +6,7 @@ This is a personal custom image of [Bazzite](https://github.com/ublue-os/bazzite
 
 ### Fedora Repo
 - [Borg Backup](https://github.com/borgbackup/borg)
+- [Micro](https://github.com/micro-editor/MICRO)
 - [Niri](https://github.com/niri-wm/niri)
 - [Noctalia](https://github.com/noctalia-dev/noctalia)
 - [plasma5-wallpapers-dynamic](https://github.com/zzag/plasma5-wallpapers-dynamic)
