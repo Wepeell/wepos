@@ -7,6 +7,7 @@ repos=(
     codifryed/CoolerControl
     errornointernet/packages
     faugus/faugus-launcher
+    ulysg/xwayland-satellite # Revert me
 )
 
 # Packages to install
@@ -34,6 +35,9 @@ fi
 
 # Install packages
 dnf5 -y install "${packages[@]}"
+
+# Revert me: upgrade xwayland-satellite
+dnf5 -y upgrade --from-repo "copr:copr.fedorainfracloud.org:ulysg:xwayland-satellite" "xwayland-satellite"
 
 # Disable repos
 for repo in "${repos[@]}"; do
