@@ -13,3 +13,6 @@ ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="25a7", ATTRS{
 
 # Disable waking up from Keychron V6
 ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="3434", ATTRS{idProduct}=="0361", ATTR{power/wakeup}="disabled"
+
+# Disable waking up from Lamzu Thorn V2 8K Dongle
+ACTION=="add", SUBSYSTEM=="usb", DRIVERS=="usb", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="002e", ATTR{power/wakeup}="disabled"
