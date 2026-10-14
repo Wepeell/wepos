@@ -1,8 +1,32 @@
 ### Use "lsusb" in terminal to identify devices
 ### Example:
-### Bus 001 Device 014: ID 37b0:0033 LAMZU LAMZU THORN V2 8K Dongle DFU
-### "37b0" is the vendor ID and "0033" is the product ID
+### Bus 001 Device 009: ID 37b0:0040 LAMZU Thorn V2
+### "37b0" is the vendor ID and "0040" is the product ID
 
-# This is an attempt to make firmware updates possible in the Lamzu web driver
-# Lamzu Thorn v2 Dongle DFU
+# Lamzu Thorn V2 Wired
+# Bus 001 Device 009: ID 37b0:0040 LAMZU Thorn V2
+
+# Lamzu Thorn V2 Wired DFU
+# Bus 001 Device 031: ID 37b0:0041 LAMZU LAMZU THORN V2 DFU
+
+# Lamzu Thorn V2 Dongle
+# Bus 001 Device 026: ID 37b0:002e LAMZU LAMZU 8K Dongle V2 Dongle
+
+# Lamzu Thorn V2 Dongle DFU
+# Bus 001 Device 029: ID 37b0:0033 LAMZU LAMZU THORN V2 8K Dongle DFU
+
+# Should not need these
+# KERNEL=="hidraw*", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="0041", MODE="0666", TAG+="uaccess"
 # KERNEL=="hidraw*", ATTRS{idVendor}=="37b0", ATTRS{idProduct}=="0033", MODE="0666", TAG+="uaccess"
+
+### How to update firmware on Linux
+# Use Chrome based browser
+# Go to lamzu.net
+# Click "Firmware Update"
+# Click "Update""
+# Click "Check Current Firmware Version"
+# Select the correct HID device in the browser prompt
+# Click "Upgrade" and the device will go into DFU mode but fail to prompt to connect the DFU device
+# Go into DevTools (F12) and run this in console:
+# await navigator.hid.requestDevice({ filters: [{ vendorId: 0x37b0 }] })
+# Browser should now show a prompt to connect the DFU device
