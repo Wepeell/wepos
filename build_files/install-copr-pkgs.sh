@@ -5,7 +5,7 @@ set -ouex pipefail
 # Repos to enable
 repos=(
     codifryed/CoolerControl
-    errornointernet/packages
+    # errornointernet/packages # Revert me: add this back if wl-screenrec gets updated
     faugus/faugus-launcher
     ulysg/xwayland-satellite # Revert me
 )
@@ -16,7 +16,7 @@ packages=(
     coolercontrold
     liquidctl # CoolerControl dependency
     faugus-launcher
-    wl-screenrec
+    # wl-screenrec # Revert me: add this back if wl-screenrec gets updated
 )
 
 # Enable repos
