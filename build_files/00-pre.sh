@@ -10,11 +10,6 @@ mkdir -p /var/roothome
 # These files needs to be copied into an immutable part of the image
 mkdir -p /var/opt
 
-# Disable Terra repo
-dnf5 -y config-manager setopt "terra*".enabled=false
-# This should fix Anaconda ISO building
-sed -i 's/^enabled=.*/enabled=0/' /usr/share/dnf5/repos.d/terra-mesa.repo
-
 # Packages to version lock
 packages=(
     qt6-qtbase
