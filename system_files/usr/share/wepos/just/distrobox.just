@@ -6,7 +6,7 @@ distrobox-list:
 # Alias for distrobox-list
 alias distrobox := distrobox-list
 
-# Create a Distrobox container, requires one argument for its name
+# Create a Distrobox container
 [group('Distrobox')]
 distrobox-create container_name image_tag="latest" container_image="quay.io/fedora/fedora-toolbox":
     #!/usr/bin/env bash
@@ -25,7 +25,7 @@ distrobox-create container_name image_tag="latest" container_image="quay.io/fedo
         --home "$container_home" \
         --no-entry
 
-# Clone a Distrobox container, requires one argument for which container to clone
+# Clone a Distrobox container
 [group('Distrobox')]
 distrobox-clone container_name:
     #!/usr/bin/env bash
@@ -43,7 +43,7 @@ distrobox-clone container_name:
         --home "$clone_home" \
         --no-entry
 
-# Delete a Distrobox container, requires one argument for which container to delete
+# Delete a Distrobox container
 [group('Distrobox')]
 distrobox-rm container_name:
     #!/usr/bin/env bash
