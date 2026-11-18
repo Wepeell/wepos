@@ -8,18 +8,19 @@ alias distrobox := distrobox-list
 
 # Create a Distrobox container, requires one argument for its name
 [group('Distrobox')]
-distrobox-create container_name:
+distrobox-create container_name image_tag="latest" container_image="quay.io/fedora/fedora-toolbox":
     #!/usr/bin/env bash
     set -euo pipefail
 
     # Variables
-    container_image="ghcr.io/ublue-os/fedora-toolbox:latest"
+    container_image="{{ container_image }}"
+    image_tag="{{ image_tag }}"
     container_name="{{ container_name }}"
     container_home="${HOME}/distrobox/${container_name}"
 
     # Create distrobox
     distrobox create \
-        --image "$container_image" \
+        --image "${container_image}:${image_tag}" \
         --name "$container_name" \
         --home "$container_home" \
         --no-entry
