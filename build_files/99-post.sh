@@ -12,9 +12,9 @@ cp -rv "/ctx/system_files"/. /
 rm -f /etc/skel/.config/autostart/steam.desktop
 
 # Disable autostart
-tee -a "/etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop" <<'EOF'
-Hidden=true
-EOF
+# tee -a "/etc/xdg/autostart/org.kde.xwaylandvideobridge.desktop" <<'EOF'
+# Hidden=true
+# EOF
 
 # Clean up directories to make linter stop complaining
 rm -rf /run/dnf
